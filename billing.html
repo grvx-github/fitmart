@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout - GymStore</title>
+	<link rel="stylesheet" href="assets/stylesheets/style.css">
+	<link rel="stylesheet" href="assets/stylesheets/billing.css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<h1 class="logo">GymStore</h1>
+			<nav>
+				<a href="index.html">Home</a>
+				<a href="products.html">Products</a>
+				<a href="cart.html">Cart</a>
+				<a href="billing.html" class="active">Checkout</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container checkout-page">
+		<div class="checkout-left">
+			<h2>Billing & Shipping</h2>
+			<form id="billing-form">
+				<div class="form-group">
+					<label for="fullname">Full Name</label>
+					<input type="text" id="fullname" placeholder="John Doe" required>
+				</div>
+
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" placeholder="john@example.com" required>
+				</div>
+
+				<div class="form-group">
+					<label for="address">Select Address</label>
+					<select id="address-select" required>
+						<option value="">-- Select Address --</option>
+					</select>
+					<button type="button" class="add-address-btn">Add New Address</button>
+				</div>
+
+				<div class="form-group">
+					<label for="payment">Payment Method</label>
+					<select id="payment" required>
+						<option value="">Select Payment Method</option>
+						<option value="card">Credit/Debit Card</option>
+						<option value="upi">UPI</option>
+						<option value="cod">Cash on Delivery</option>
+					</select>
+				</div>
+
+				<button type="submit" class="btn">Place Order</button>
+			</form>
+		</div>
+
+		<div class="checkout-right">
+			<h2>Order Summary</h2>
+
+			<!-- Top section: Single-item Carousel -->
+			<div class="order-carousel-container">
+				<button class="carousel-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+				<div class="order-carousel" id="order-carousel">
+					<!-- Carousel items dynamically inserted here -->
+				</div>
+				<button class="carousel-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+			</div>
+
+			<!-- Bottom section: Total Summary -->
+			<div class="order-total-summary">
+				<div class="summary-row">
+					<span>Subtotal:</span>
+					<span>₹<span id="subtotal">0</span></span>
+				</div>
+				<div class="summary-row">
+					<span>Discount:</span>
+					<span>₹<span id="discount">0</span></span>
+				</div>
+				<div class="summary-row total">
+					<span>Total:</span>
+					<span>₹<span id="total">0</span></span>
+				</div>
+			</div>
+		</div>
+
+
+	</main>
+
+
+	<!-- Modal for adding new address -->
+
+<!-- Modal -->
+<div class="modal" id="address-modal">
+	<div class="modal-content">
+		<span class="close-modal">&times;</span>
+		<h3>Add New Address</h3>
+		<form id="new-address-form" class="modal-form">
+			<div class="form-group">
+				<label for="new-address-name">Address Name</label>
+				<input type="text" id="new-address-name" placeholder="Home, Office, etc." required>
+			</div>
+
+			<div class="form-group">
+				<label for="new-address-details">Street Address</label>
+				<textarea id="new-address-details" placeholder="123 Street, City, Country" required></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="new-address-landmark">Landmark</label>
+				<input type="text" id="new-address-landmark" placeholder="Near XYZ Mall, Park, etc.">
+			</div>
+
+			<div class="form-group">
+				<label for="new-address-phone">Phone Number</label>
+				<input type="tel" id="new-address-phone" placeholder="+91 9876543210" required>
+			</div>
+
+			<button type="submit" class="btn">Add Address</button>
+		</form>
+	</div>
+</div>
+
+	<script src="https://kit.fontawesome.com/e3a7f177f0.js" crossorigin="anonymous"></script>
+	<script src="assets/scripts/billing.js"></script>
+</body>
+
+</html>
