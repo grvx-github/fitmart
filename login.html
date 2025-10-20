@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>FitMart | Login</title>
+	<link rel="stylesheet" href="/assets/stylesheets/style.css" />
+	<link rel="stylesheet" href="/assets/stylesheets/auth.css">
+</head>
+
+<body>
+	<div class="bg-image">
+		<div class="overlay"></div>
+
+		<div class="card animate">
+			<h1>Welcome Back 💪</h1>
+			<p class="subtitle">Login to continue your fitness journey</p>
+
+			<form id="login-form">
+				<input type="email" id="email" placeholder="Email" required />
+				<input type="password" id="password" placeholder="Password" required />
+				<button type="submit" class="signup-btn">Login</button>
+			</form>
+
+			<div class="divider"><span>or</span></div>
+
+			<button id="google-login" class="google-btn">
+				<img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" />
+				Continue with Google
+			</button>
+
+			<p class="switch">Don’t have an account? <a href="signup.html">Sign up</a></p>
+			<p id="login-msg" class="message"></p>
+		</div>
+	</div>
+
+	<script type="module">
+		import { auth, provider } from "./firebase.js"
+		import {
+			signInWithEmailAndPassword,
+			signInWithPopup,
+		} from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"
+
+		const form = document.getElementById("login-form")
+		const msg = document.getElementById("login-msg")
+		const googleBtn = document.getElementById("google-login")
+
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault()
+			const email = form.email.value
+			const password = form.password.value
+
+			try {
+				await signInWithEmailAndPassword(auth, email, password)
+				msg.textContent = "✅ Login successful!"
+				msg.style.color = "lime"
+				setTimeout(() => (window.location.href = "index.html"), 1000)
+			} catch (err) {
+				msg.textContent = "❌ " + err.message
+				msg.style.color = "red"
+			}
+		})
+
+		googleBtn.addEventListener("click", async () => {
+			try {
+				await signInWithPopup(auth, provider)
+				msg.textContent = "✅ Google sign-in successful!"
+				msg.style.color = "lime"
+				setTimeout(() => (window.location.href = "index.html"), 1000)
+			} catch (err) {
+				msg.textContent = "❌ " + err.message
+				msg.style.color = "red"
+			}
+		})
+	</script>
+</body>
+
+</html>
