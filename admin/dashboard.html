@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FitMart Admin | Dashboard</title>
+	<link rel="stylesheet" href="/assets/stylesheets/admin.css">
+	<link rel="stylesheet" href="/assets/stylesheets/dark_mode.css">
+	<script src="https://kit.fontawesome.com/e3a7f177f0.js" crossorigin="anonymous" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+	<div class="admin-container">
+
+		<aside class="sidebar">
+			<h2>FitMart Admin</h2>
+			<ul>
+				<li class="active"><i class="fas fa-chart-line"></i> Dashboard</li>
+				<li><i class="fa-solid fa-cubes"></i> Products</li>
+				<li><i class="fas fa-box"></i> Orders</li>
+				<li><i class="fas fa-users"></i> Users</li>
+				<li><i class="fas fa-cog"></i> Settings</li>
+				<li><i class="fas fa-question-circle"></i> Help Center</li>
+			</ul>
+		</aside>
+
+
+		<main class="dashboard">
+
+			<!-- Admin Top Navbar -->
+			<header class="admin-topbar">
+				<div class="topbar-left">
+					<div class="search-wrapper">
+						<i class="fas fa-search search-icon"></i>
+						<input type="text" class="topbar-search" placeholder="Search...">
+					</div>
+				</div>
+
+				<div class="topbar-right">
+					<!-- Dark Mode Toggle -->
+					<button id="darkModeToggle" class="icon-btn" title="Toggle Dark Mode">
+						<i class="fas fa-moon"></i>
+					</button>
+
+					<!-- Notifications Dropdown -->
+					<div class="dropdown">
+						<button class="icon-btn" id="notifBtn">
+							<i class="fas fa-bell"></i>
+							<span class="badge">4</span>
+						</button>
+						<div class="dropdown-menu notif-menu" id="notifDropdown">
+							<p class="dropdown-title">Notifications</p>
+							<ul>
+								<li>
+									<div class="notif-icon blue"><i class="fas fa-percent"></i></div>
+									<div class="notif-content">
+										<strong>Discount available</strong>
+										<p>Morbi sapien massa, ultricies at rhoncus at, ullamcorper nec diam</p>
+									</div>
+								</li>
+								<li>
+									<div class="notif-icon purple"><i class="fas fa-user-check"></i></div>
+									<div class="notif-content">
+										<strong>Account verified</strong>
+										<p>Mauris libero ex, iaculis vitae rhoncus et</p>
+									</div>
+								</li>
+								<li>
+									<div class="notif-icon green"><i class="fas fa-box"></i></div>
+									<div class="notif-content">
+										<strong>Order shipped successfully</strong>
+										<p>Integer aliquam eros nec sollicitudin sollicitudin</p>
+									</div>
+								</li>
+								<li>
+									<div class="notif-icon orange"><i class="fas fa-truck"></i></div>
+									<div class="notif-content">
+										<strong>Order pending: <span class="highlight">ID 305830</span></strong>
+										<p>Ultricies at rhoncus at ullamcorper</p>
+									</div>
+								</li>
+							</ul>
+							<button class="view-all-btn">View all</button>
+						</div>
+					</div>
+
+					<!-- Messages Dropdown -->
+					<div class="dropdown">
+						<button class="icon-btn" id="msgBtn">
+							<i class="fas fa-envelope"></i>
+							<span class="badge">2</span>
+						</button>
+						<div class="dropdown-menu msg-menu" id="msgDropdown">
+							<p class="dropdown-title">Messages</p>
+							<ul>
+								<li>
+									<img src="https://randomuser.me/api/portraits/men/12.jpg" alt="John" class="msg-avatar">
+									<div class="msg-content">
+										<strong>John Doe</strong>
+										<p>Inquiry about Treadmill delivery</p>
+									</div>
+								</li>
+								<li>
+									<img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Sophia" class="msg-avatar">
+									<div class="msg-content">
+										<strong>Sophia Patel</strong>
+										<p>Question about discount codes</p>
+									</div>
+								</li>
+							</ul>
+							<button class="view-all-btn">View all</button>
+						</div>
+					</div>
+
+					<!-- Profile Dropdown -->
+					<div class="dropdown">
+						<button class="profile-btn" id="profileBtn">
+							<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="profile-avatar">
+						</button>
+						<div class="dropdown-menu" id="profileDropdown">
+							<ul>
+								<li>View Profile</li>
+								<li>Settings</li>
+								<li>Logout</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+
+
+			<div class="dashboard_main"">
+			<!-- 1. Mini Cards -->
+			<div class=" cards">
+				<div class="card">
+					<div class="card-top">
+						<div class="icon-wrapper hex green"><i class="fas fa-coins"></i></div>
+						<div class="growth positive">▲ 12%</div>
+					</div>
+					<h3>Sales</h3>
+					<p>₹1,25,000</p>
+					<canvas id="salesChartMini"></canvas>
+				</div>
+
+				<div class="card">
+					<div class="card-top">
+						<div class="icon-wrapper hex yellow"><i class="fas fa-shopping-cart"></i></div>
+						<div class="growth negative">▼ 4%</div>
+					</div>
+					<h3>Orders</h3>
+					<p>342 Orders</p>
+					<canvas id="ordersChartMini"></canvas>
+				</div>
+
+				<div class="card">
+					<div class="card-top">
+						<div class="icon-wrapper hex blue"><i class="fas fa-users"></i></div>
+						<div class="growth positive">▲ 8%</div>
+					</div>
+					<h3>Users</h3>
+					<p>1,242 Active</p>
+					<canvas id="usersChartMini"></canvas>
+				</div>
+
+				<div class="card">
+					<div class="card-top">
+						<div class="icon-wrapper hex purple"><i class="fas fa-star"></i></div>
+						<div class="growth positive">▲ 5%</div>
+					</div>
+					<h3>Feedbacks</h3>
+					<p>278 Reviews</p>
+					<canvas id="reviewsChartMini"></canvas>
+				</div>
+			</div>
+
+			<!-- 2. Recent Orders Graph -->
+			<div class="material-card">
+				<h2>Recent Orders Overview</h2>
+				<canvas id="recentOrdersChart"></canvas>
+			</div>
+
+			<!-- 3. Two-column layout: Top Products | Top States -->
+			<div class="two-column">
+				<div class="top-products material-card">
+					<h2>Top Products</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Product</th>
+								<th>Category</th>
+								<th>Sold</th>
+								<th>Revenue</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="product-cell">
+									<img src="/assets/images/dumbbell.jpg" alt="Dumbbell">
+									<span>Adjustable Dumbbell</span>
+								</td>
+								<td>Strength</td>
+								<td>120</td>
+								<td>₹45,000</td>
+							</tr>
+							<tr>
+								<td class="product-cell">
+									<img src="/assets/images/yogamat.jpg" alt="Yoga Mat">
+									<span>Eco Yoga Mat</span>
+								</td>
+								<td>Yoga</td>
+								<td>95</td>
+								<td>₹28,500</td>
+							</tr>
+							<tr>
+								<td class="product-cell">
+									<img src="/assets/images/dumbbell.jpg" alt="Kettlebell">
+									<span>Kettlebell 10kg</span>
+								</td>
+								<td>Cardio</td>
+								<td>75</td>
+								<td>₹22,000</td>
+							</tr>
+							<tr>
+								<td class="product-cell">
+									<img src="/assets/images/resistance_bands.jpg" alt="Treadmill">
+									<span>Compact Treadmill</span>
+								</td>
+								<td>Equipment</td>
+								<td>60</td>
+								<td>₹95,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+				<div class="material-card">
+					<h2>Top States by Sales</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>State</th>
+								<th>Revenue</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Maharashtra</td>
+								<td>₹1,20,000</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Delhi</td>
+								<td>₹95,000</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>West Bengal</td>
+								<td>₹80,000</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Tamil Nadu</td>
+								<td>₹70,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+			<!-- 4. Product Overview -->
+
+			<div class="material-card">
+				<h2>Product Overview</h2>
+				<table class="product-overview-table">
+					<thead>
+						<tr>
+							<th>Product</th>
+							<th>Category</th>
+							<th>Price</th>
+							<th>Qty</th>
+							<th>Sales</th>
+							<th>Revenue</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="product-cell">
+								<img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=80&h=80&fit=crop"
+									alt="Dumbbells">
+								<div class="prod-meta">
+									<div class="prod-name">Adjustable Dumbbell</div>
+									<div class="prod-sku">P001</div>
+								</div>
+							</td>
+							<td>Strength</td>
+							<td>₹200</td>
+							<td>120</td>
+							<td>120</td>
+							<td>₹24,000</td>
+						</tr>
+
+						<tr>
+							<td class="product-cell">
+								<img src="https://images.unsplash.com/photo-1606813902798-1b8e4e6a0f59?w=80&h=80&fit=crop"
+									alt="Yoga Mat">
+								<div class="prod-meta">
+									<div class="prod-name">Eco Yoga Mat</div>
+									<div class="prod-sku">P002</div>
+								</div>
+							</td>
+							<td>Yoga</td>
+							<td>₹100</td>
+							<td>85</td>
+							<td>85</td>
+							<td>₹8,500</td>
+						</tr>
+
+						<tr>
+							<td class="product-cell">
+								<img src="https://images.unsplash.com/photo-1584467735871-bcc3b4d4f22b?w=80&h=80&fit=crop"
+									alt="Kettlebell">
+								<div class="prod-meta">
+									<div class="prod-name">Kettlebell 10kg</div>
+									<div class="prod-sku">P003</div>
+								</div>
+							</td>
+							<td>Cardio</td>
+							<td>₹1,800</td>
+							<td>75</td>
+							<td>75</td>
+							<td>₹1,35,000</td>
+						</tr>
+
+						<tr>
+							<td class="product-cell">
+								<img src="https://images.unsplash.com/photo-1583454110557-21fa7ffb1642?w=80&h=80&fit=crop"
+									alt="Treadmill">
+								<div class="prod-meta">
+									<div class="prod-name">Compact Treadmill</div>
+									<div class="prod-sku">P004</div>
+								</div>
+							</td>
+							<td>Equipment</td>
+							<td>₹95,000</td>
+							<td>60</td>
+							<td>60</td>
+							<td>₹57,00,000</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<!-- 5. Two-column: Recent Orders + Earnings/Profit -->
+			<div class="two-column">
+				<div class="material-card large-left">
+					<h2>Recent Orders</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Order ID</th>
+								<th>Customer</th>
+								<th>Amount</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>#FM1209</td>
+								<td>Rohit Sharma</td>
+								<td>₹4,500</td>
+								<td>Delivered</td>
+							</tr>
+							<tr>
+								<td>#FM1210</td>
+								<td>Priya Verma</td>
+								<td>₹2,200</td>
+								<td>Pending</td>
+							</tr>
+							<tr>
+								<td>#FM1211</td>
+								<td>Aman Gupta</td>
+								<td>₹3,100</td>
+								<td>Shipped</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="material-card small-right">
+					<h2>Earnings & Profit</h2>
+
+					<div class="earnings-summary">
+						<div class="legend-item">
+							<span class="dot blue"></span>
+							<div>
+								<h4>Revenue</h4>
+								<p>$37,802 <span class="growth positive">▲ 0.56%</span></p>
+							</div>
+						</div>
+						<div class="legend-item">
+							<span class="dot light-blue"></span>
+							<div>
+								<h4>Profit</h4>
+								<p>$28,305 <span class="growth positive">▲ 0.56%</span></p>
+							</div>
+						</div>
+					</div>
+
+					<canvas id="earningsChart"></canvas>
+				</div>
+
+			</div>
+
+			<!-- 6. Recent Comments -->
+
+			<div class="material-card">
+				<h2>Recent Comments</h2>
+				<div class="comments-section">
+					<div class="comment">
+						<img src="https://randomuser.me/api/portraits/men/12.jpg" alt="John Doe" class="comment-avatar">
+						<div class="comment-content">
+							<div class="comment-header">
+								<span class="comment-name">John Doe</span>
+								<div class="comment-stars">
+									★★★★★
+								</div>
+							</div>
+							<p class="comment-text">Loved the quality of the product! Delivery was quick and packaging was excellent.
+							</p>
+						</div>
+					</div>
+
+					<div class="comment">
+						<img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Sophia Patel" class="comment-avatar">
+						<div class="comment-content">
+							<div class="comment-header">
+								<span class="comment-name">Sophia Patel</span>
+								<div class="comment-stars">
+									★★★★☆
+								</div>
+							</div>
+							<p class="comment-text">Nice experience overall. The treadmill works great but could improve on
+								cushioning.</p>
+						</div>
+					</div>
+
+					<div class="comment">
+						<img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Arjun Mehta" class="comment-avatar">
+						<div class="comment-content">
+							<div class="comment-header">
+								<span class="comment-name">Arjun Mehta</span>
+								<div class="comment-stars">
+									★★★★★
+								</div>
+							</div>
+							<p class="comment-text">Excellent service and prompt support. Will definitely order again!</p>
+						</div>
+					</div>
+
+					<div class="comment">
+						<img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Priya Sharma" class="comment-avatar">
+						<div class="comment-content">
+							<div class="comment-header">
+								<span class="comment-name">Priya Sharma</span>
+								<div class="comment-stars">
+									★★★☆☆
+								</div>
+							</div>
+							<p class="comment-text">Product was okay, but delivery took longer than expected.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	</main>
+	</div>
+	<script>
+		// Dropdown toggles
+		document.querySelectorAll('.dropdown').forEach(drop => {
+			const btn = drop.querySelector('button');
+			const menu = drop.querySelector('.dropdown-menu');
+			btn.addEventListener('click', () => {
+				menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+			});
+			// Close dropdown on outside click
+			document.addEventListener('click', (e) => {
+				if (!drop.contains(e.target)) menu.style.display = 'none';
+			});
+		});
+
+		// Dark mode toggle
+		const darkBtn = document.getElementById('darkModeToggle');
+		darkBtn.addEventListener('click', () => {
+			document.body.classList.toggle('dark-mode');
+		});
+	</script>
+
+	<script type="module" src="/assets/scripts/admin-dashboard.js"></script>
+</body>
+
+</html>
