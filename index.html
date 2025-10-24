@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/add5bfa3f7.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <script src="script.js" defer></script>
+  <section id="header">
+    <a href="#"><img src="assets/hercules logo.png" class="logo" alt="LOGO"></a>
+    <div>
+      <ul id="navbar">
+        <li id="search-li">
+          <input type="text" placeholder="Search products..." id="search-bar">
+          <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </li>
+
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+      </ul>
+
+
+    </div>
+    <div id="mobile">
+      <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+
+      <a href="#" id="bar"><i class="fa-solid fa-bars"></i></a>
+    </div>
+  </section>
+  <section id="hero">
+    <h4>Trade-in-offer</h4>
+    <h2>Super value deals</h2>
+    <h1>On all products</h1>
+    <p>Save more with coupons & up to 70% off!</p>
+    <button>Shop Now</button>
+  </section>
+  <section id="feature" class="section-p1">
+    <div class="fe-box">
+      <img src="assets/f1.png" alt="">
+      <h6>Free Shipping</h6>
+    </div>
+    <div class="fe-box">
+      <img src="assets/f2.png" alt="">
+      <h6>Online Order</h6>
+    </div>
+    <div class="fe-box">
+      <img src="assets/f3.png" alt="">
+      <h6>Save Money</h6>
+    </div>
+    <!-- <div class="fe-box">
+        <img src="./img/features/f4.png" alt="">
+        <h6>Promotions</h6>
+    </div> -->
+    <div class="fe-box">
+      <img src="assets/f5.png" alt="">
+      <h6>Happy Sell</h6>
+    </div>
+    <div class="fe-box">
+      <img src="assets/f6.png" alt="">
+      <h6>24/7 Support</h6>
+    </div>
+
+  </section>
+  <section id="product1" class="section-p1">
+    <h2>Featured Products</h2>
+    <p>EXPLORE HERCULES DIFFERENCE</p>
+    <div class="pro-container">
+      <div class="pro" onclick="window.location.href='sproduct.html?id=0'">
+        <img src="assets/TMA60.png" alt="">
+        <div class="des">
+          <span>TREADMILL</span>
+          <h5>TMA60</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>Rs 169000</h4>
+        </div>
+        <a href="#" onclick="addToCart(0)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
+      </div>
+
+
+      <div class="pro" onclick="window.location.href='sproduct.html?id=1'">
+        <img src="assets/elp70.png" alt="">
+        <div class="des">
+          <span>ELLIPTICAL</span>
+          <h5>ELP70</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>Rs 370000</h4>
+        </div>
+        <a href="#" onclick="addToCart(1)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
+      </div>
+
+
+      <div class="pro" onclick="window.location.href='sproduct.html?id=2'">
+        <img src="assets/rbp70.png" alt="">
+        <div class="des">
+          <span>RECUMBENT BIKES</span>
+          <h5>RBP70</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>Rs 290000</h4>
+        </div>
+        <a href="#" onclick="addToCart(2)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
+      </div>
+
+
+      <div class="pro" onclick="window.location.href='sproduct.html?id=3'">
+        <img src="assets/Flexion-Lat-Pull-Down-Mid-Row.png" alt="">
+        <div class="des">
+          <span>PIN LOADED</span>
+          <h5>FLEXION- LAT PULL DOWN AND MID ROW</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>Rs 275000</h4>
+        </div>
+        <a href="#" onclick="addToCart(3)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
+      </div>
+
+
+      <div class="pro" onclick="window.location.href='sproduct.html?id=4'">
+        <img src="assets/AR03.png" alt="">
+        <div class="des">
+          <span>PLATE LOADED</span>
+          <h5>ARMOUR - SHOULDER PRESS</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>Rs 300000</h4>
+        </div>
+        <a href="#" onclick="addToCart(4)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
+      </div>
+
+
+      <div class="pro" onclick="window.location.href='sproduct.html?id=5'">
+        <img src="assets/ECLIPSE.png" alt="">
+        <div class="des">
+          <span>ECLIPSE</span>
+          <h5>SMITH AND FUNCTIONAL TRAINER</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>Rs 150000</h4>
+        </div>
+        <a href="#" onclick="addToCart(5)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
+      </div>
+
+
+      <div class="pro" onclick="window.location.href='sproduct.html?id=6'">
+        <img src="assets/FUSION.png" alt="">
+        <div class="des">
+          <span>FUSION</span>
+          <h5>45 DEGREE INCLINE SQUAT</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>Rs 200000</h4>
+        </div>
+        <a href="#" onclick="addToCart(6)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
+      </div>
+
+
+      <div class="pro" onclick="window.location.href='sproduct.html?id=7'">
+        <img src="assets/WAVE.png" alt="">
+        <div class="des">
+          <span>WAVE</span>
+          <h5>INCLINE BENCH</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>Rs 120000</h4>
+        </div>
+        <a href="#" onclick="addToCart(7)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>Sigh Up For Newsletters</h4>
+      <p>Get E-mail Updates about out latest shop and <span>special offers</span></p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your email address">
+      <button class="normal">Sign Up</button>
+    </div>
+  </section>
+  <footer class="section-p1">
+    <div class="col">
+      <img src="assets/hercules logo.png" alt="">
+      <h4>Contact</h4>
+      <p><strong>Address:</strong> Whitefield,Bangalore</p>
+      <p><strong>Phone:</strong> +911 9113867821</p>
+      <p><strong>Hours:</strong> +10:00-18:00, Mon - Sat</p>
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About Us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="col">
+      <h4>My Accout</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="col install">
+      <h4>Install App</h4>
+      <p>From App Store or Google Play</p>
+      <div class="row">
+        <img src="assets/appstore.jpg" alt="">
+        <img src="assets/playstore.jpg" alt="">
+      </div>
+      <p>Secured Payment Gateways</p>
+      <img src="assets/pay.png" alt="">
+    </div>
+
+
+    <div class="copyright">
+      <p>2025, GIA-Ecommerce Website</p>
+    </div>
+  </footer>
+</body>
+
+</html>
