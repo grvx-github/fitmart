@@ -1,0 +1,293 @@
+
+:root {
+	--primary: #3b82f6;
+	--primary-hover: #2563eb;
+	--card-radius: 12px;
+	--card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Container */
+.container {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+/* Card Wrapper */
+.card {
+	background: var(--card-bg);
+	color: var(--text-color);
+	border-radius: var(--card-radius);
+	box-shadow: var(--card-shadow);
+	padding: 1.5rem 2rem;
+	flex: 1;
+	min-width: 360px;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card h2 {
+	font-size: 1.3rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	color: var(--text-color);
+}
+
+/* Input Groups */
+.input-group {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.input-group label {
+	font-weight: 600;
+	margin-bottom: 0.4rem;
+	color: var(--text-color);
+}
+
+.input-group input,
+.input-group select,
+textarea {
+	padding: 0.6rem 0.8rem;
+	font-size: 0.95rem;
+	color: var(--text-color);
+	background: var(--card-bg);
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
+	outline: none;
+	transition: border 0.25s ease, background 0.25s ease;
+}
+
+.input-group input:focus,
+textarea:focus,
+select:focus {
+	border-color: var(--primary);
+}
+
+/* Textarea */
+textarea {
+	min-height: 80px;
+	resize: vertical;
+	font-family: inherit;
+}
+
+/* Upload Grid */
+.upload-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.upload-box {
+	position: relative;
+	width: 160px;
+	height: 160px;
+	border: 2px dashed #ccc;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	background: #f8f8f8;
+	transition: 0.3s;
+}
+
+.upload-box:hover {
+	border-color: var(--primary);
+	background: #eef5ff;
+}
+
+.upload-placeholder {
+	text-align: center;
+	color: #777;
+	font-size: 0.8rem;
+}
+
+.upload-icon {
+	font-size: 1.6rem;
+	display: block;
+	margin-bottom: 0.3rem;
+}
+
+.preview {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 8px;
+	display: none;
+}
+
+/* Upload Info */
+.upload-info {
+	margin-top: 0.75rem;
+	border-left: 3px solid var(--primary);
+	padding-left: 0.6rem;
+	font-size: 0.85rem;
+	color: var(--text-color);
+	opacity: 0.9;
+}
+
+/* Attribute Section */
+.attribute-section {
+	margin-top: 1rem;
+}
+
+.attribute-inputs {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 0.7rem;
+}
+
+.attribute-inputs select,
+.attribute-inputs input {
+	flex: 1;
+	padding: 0.6rem 0.8rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-size: 0.95rem;
+	background: var(--card-bg);
+	color: var(--text-color);
+	transition: 0.25s ease;
+}
+
+.attribute-inputs select:focus,
+.attribute-inputs input:focus {
+	border-color: var(--primary);
+}
+
+.attribute-inputs button {
+	padding: 0.6rem 1rem;
+	border: none;
+	border-radius: 8px;
+	background: var(--primary);
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.attribute-inputs button:hover {
+	background: var(--primary-hover);
+}
+
+/* Attribute Tags */
+.attr-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.attr-tag {
+	background: rgba(59, 130, 246, 0.15);
+	color: var(--primary-hover);
+	padding: 0.35rem 0.7rem;
+	border-radius: 6px;
+	font-size: 0.85rem;
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+}
+
+.attr-tag span {
+	cursor: pointer;
+	font-weight: bold;
+	color: #ef4444;
+}
+
+/* Progress Bar */
+.progress-container {
+	width: 100%;
+	background: #e5e7eb;
+	border-radius: 8px;
+	margin: 1rem 0;
+	height: 10px;
+	overflow: hidden;
+	display: none;
+}
+
+.progress-bar {
+	background: var(--primary);
+	width: 0%;
+	height: 100%;
+	color: white;
+	text-align: center;
+	font-size: 0.75rem;
+	transition: width 0.3s;
+}
+
+/* Primary Button */
+.btn {
+	background: #10b981;
+	color: white;
+	border: none;
+	padding: 0.8rem 1.5rem;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 600;
+	margin-top: 1rem;
+	font-size: 0.95rem;
+	transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+	background: #059669;
+	transform: translateY(-1px);
+}
+
+/* Toast Notification */
+.toast {
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	background: rgba(0, 0, 0, 0.85);
+	color: white;
+	padding: 0.8rem 1.2rem;
+	border-radius: 6px;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.3s ease;
+	z-index: 1000;
+	font-size: 0.9rem;
+}
+
+.toast.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* =====================
+   🌙 DARK MODE SUPPORT
+===================== */
+
+body.dark-mode .upload-box {
+	background: #1e1e2d;
+	border-color: #2d2d3d;
+}
+
+body.dark-mode .upload-box:hover {
+	border-color: var(--primary);
+	background: rgba(59, 130, 246, 0.1);
+}
+
+body.dark-mode .upload-placeholder {
+	color: #aaa;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode textarea,
+body.dark-mode select {
+	background: #1a1a2c;
+	border-color: #333;
+	color: #e5e7eb;
+}
+
+body.dark-mode .attr-tag {
+	background: rgba(59, 130, 246, 0.25);
+	color: #93c5fd;
+}
+
+body.dark-mode .upload-info {
+	color: #cbd5e1;
+	border-color: var(--primary);
+}
