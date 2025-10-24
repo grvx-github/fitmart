@@ -5,23 +5,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>FitMart</title>
+  <link rel="stylesheet" href="/assets/stylesheets/style.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/stylesheets/utility.css">
   <script src="https://kit.fontawesome.com/add5bfa3f7.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-  <script src="script.js" defer></script>
+
   <section id="header">
     <a href="#"><img src="assets/fitmartLOGO-removebg-new.png" class="logo" alt="LOGO"></a>
     <div>
       <ul id="navbar">
-        <li id="search-li">
-          <input type="text" placeholder="Search products..." id="search-bar">
-          <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </li>
-
         <li><a href="index.html" class="active">Home</a></li>
         <li class="has-dropdown">
           <a href="shop.html">Shop</a>
@@ -35,9 +32,23 @@
         </li>
         <li><a href="contact.html">Contact</a></li>
         <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-  <li id="lg-login"><a href="login.html" id="login-link"><i class="fa-solid fa-user"></i> Login</a></li>
+        <li id="search-btn-nav"><i class="fa-solid fa-magnifying-glass"></i></li>
         <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+
+     
       </ul>
+
+      <!-- Add this modal below your header section -->
+      <div id="search-modal">
+        <div class="search-modal-content">
+          <input id="search-bar" type="text" placeholder="Type words and hit enter">
+          <button id="search-btn" class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+        </div>
+      </div>
+      <div id="overlay"></div>
 
 
     </div>
@@ -47,40 +58,95 @@
       <a href="#" id="bar"><i class="fa-solid fa-bars"></i></a>
     </div>
   </section>
-  <section id="hero">
-    <h4>Trade-in-offer</h4>
-    <h2>Super value deals</h2>
-    <h1>On all products</h1>
-    <p>Save more with coupons & up to 70% off!</p>
-    <button>Shop Now</button>
-  </section>
-  <section id="feature" class="section-p1">
-    <div class="fe-box">
-      <img src="assets/f1.png" alt="">
-      <h6>Free Shipping</h6>
-    </div>
-    <div class="fe-box">
-      <img src="assets/f2.png" alt="">
-      <h6>Online Order</h6>
-    </div>
-    <div class="fe-box">
-      <img src="assets/f3.png" alt="">
-      <h6>Save Money</h6>
-    </div>
-    <!-- <div class="fe-box">
-        <img src="./img/features/f4.png" alt="">
-        <h6>Promotions</h6>
-    </div> -->
-    <div class="fe-box">
-      <img src="assets/f5.png" alt="">
-      <h6>Happy Sell</h6>
-    </div>
-    <div class="fe-box">
-      <img src="assets/f6.png" alt="">
-      <h6>24/7 Support</h6>
+  <section class="hero flex flex-90">
+    <img src="/assets/images/home/metallic-dumbbell-1.png" alt="" class="w-90 mx-auto">
+    <div class="text-center">
+      <h2>Super value deals</h2>
+      <h1>On all products</h1>
+      <p>Save more with coupons & up to 70% off!</p>
+      <button class="btn">Shop Now</button>
     </div>
 
   </section>
+
+  <section class="categories">
+    <div class="flex">
+      <div>
+        <h4>categories</h4>
+        <h3>Exercise & Fitness</h3>
+      </div>
+      <div>
+        <p>Explore Collections <i class="fa-solid fa-arrow-right"></i></p>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="col">
+        <img src="/assets/images/home/equipments.jpg" alt="">
+        <div class="text-container">
+          <h5>Equipments</h5>
+          <p class="shop-now">Shop Now <i class="fa-solid fa-arrow-right"></i></p>
+        </div>
+      </div>
+      <div class="col">
+        <img src="/assets/images/home/gear.jpg" alt="">
+        <div class="text-container">
+          <h5>Gears</h5>
+          <p class="shop-now">Shop Now <i class="fa-solid fa-arrow-right"></i></p>
+        </div>
+      </div>
+      <div class="col">
+        <img src="/assets/images/home/sportswear.jpg" alt="">
+        <div class="text-container">
+          <h5>Sportswear</h5>
+          <p class="shop-now">Shop Now <i class="fa-solid fa-arrow-right"></i></p>
+        </div>
+      </div>
+      <div class="col">
+        <img src="/assets/images/home/supplements.jpg" alt="">
+        <div class="text-container">
+          <h5>Nutrition</h5>
+          <p class="shop-now">Shop Now <i class="fa-solid fa-arrow-right"></i></p>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+    <section id="feature" class="flex justify-between px-32">
+    <div class="fe-box">
+      <img src="/assets/images/home/gift-box.png" alt="">
+      <div class="text">
+        <h6>Free Shipping</h6>
+        <p>On all orders above $50</p>
+      </div>
+    </div>
+    
+    <div class="fe-box">
+      <img src="/assets/images/home/discount.png" alt="">
+      <div class="text">
+        <h6>Best Prices</h6>
+        <p>Guaranteed low prices</p>
+      </div>
+    </div>
+    
+    <div class="fe-box">
+      <img src="/assets/images/home/wallet.png" alt="">
+      <div class="text">
+        <h6>Safe Payment</h6>
+        <p>Secure online transactions</p>
+      </div>
+    </div>
+    
+    <div class="fe-box">
+      <img src="/assets/images/home/bag.png" alt="">
+      <div class="text">
+        <h6>100% Original</h6>
+        <p>Genuine products only</p>
+      </div>
+    </div>
+
+
+    </section>
   <section id="product1" class="section-p1">
     <h2>Featured Products</h2>
     <p>EXPLORE HERCULES DIFFERENCE</p>
@@ -290,6 +356,24 @@
       <p>2025, GIA-Ecommerce Website</p>
     </div>
   </footer>
+  <script src="script.js"></script>
+  <script type="module" src="/assets/scripts/navbar-auth.js"></script>
+  <script>
+    const searchBtn = document.getElementById('search-btn-nav');
+    const searchModal = document.getElementById('search-modal');
+    const overlay = document.getElementById('overlay');
+
+    searchBtn.addEventListener('click', () => {
+      searchModal.style.top = '0';
+      overlay.style.display = 'block';
+    });
+
+    overlay.addEventListener('click', () => {
+      searchModal.style.top = '-50%';
+      overlay.style.display = 'none';
+    });
+
+  </script>
 </body>
 
 </html>

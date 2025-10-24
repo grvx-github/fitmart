@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add Product - FitMart</title>
+	<script src="https://kit.fontawesome.com/e3a7f177f0.js" crossorigin="anonymous" defer></script>
+	<link rel="stylesheet" href="/assets/stylesheets/admin.css">
+	<link rel="stylesheet" href="/assets/stylesheets/product.css">
+	<script type="module" src="/assets/scripts/product.js" defer></script>
+</head>
+
+<body>
+	<div class="admin-container">
+		<aside class="sidebar">
+			<h2>FitMart Admin</h2>
+			<ul>
+				<li class="active"><i class="fas fa-chart-line"></i> Dashboard</li>
+				<li><i class="fa-solid fa-cubes"></i> Products</li>
+				<li><i class="fas fa-box"></i> Orders</li>
+				<li><i class="fas fa-users"></i> Users</li>
+				<li><i class="fas fa-cog"></i> Settings</li>
+				<li><i class="fas fa-question-circle"></i> Help Center</li>
+			</ul>
+		</aside>
+
+		<main class="dashboard">
+
+			<header class="admin-topbar">
+				<div class="topbar-left">
+					<div class="search-wrapper">
+						<i class="fas fa-search search-icon"></i>
+						<input type="text" class="topbar-search" placeholder="Search...">
+					</div>
+				</div>
+
+				<div class="topbar-right">
+					<!-- Dark Mode Toggle -->
+					<button id="darkModeToggle" class="icon-btn" title="Toggle Dark Mode">
+						<i class="fas fa-moon"></i>
+					</button>
+
+					<!-- Notifications Dropdown -->
+					<div class="dropdown">
+						<button class="icon-btn" id="notifBtn">
+							<i class="fas fa-bell"></i>
+							<span class="badge">4</span>
+						</button>
+						<div class="dropdown-menu notif-menu" id="notifDropdown">
+							<p class="dropdown-title">Notifications</p>
+							<ul>
+								<li>
+									<div class="notif-icon blue"><i class="fas fa-percent"></i></div>
+									<div class="notif-content">
+										<strong>Discount available</strong>
+										<p>Morbi sapien massa, ultricies at rhoncus at, ullamcorper nec diam</p>
+									</div>
+								</li>
+								<li>
+									<div class="notif-icon purple"><i class="fas fa-user-check"></i></div>
+									<div class="notif-content">
+										<strong>Account verified</strong>
+										<p>Mauris libero ex, iaculis vitae rhoncus et</p>
+									</div>
+								</li>
+								<li>
+									<div class="notif-icon green"><i class="fas fa-box"></i></div>
+									<div class="notif-content">
+										<strong>Order shipped successfully</strong>
+										<p>Integer aliquam eros nec sollicitudin sollicitudin</p>
+									</div>
+								</li>
+								<li>
+									<div class="notif-icon orange"><i class="fas fa-truck"></i></div>
+									<div class="notif-content">
+										<strong>Order pending: <span class="highlight">ID 305830</span></strong>
+										<p>Ultricies at rhoncus at ullamcorper</p>
+									</div>
+								</li>
+							</ul>
+							<button class="view-all-btn">View all</button>
+						</div>
+					</div>
+
+					<!-- Messages Dropdown -->
+					<div class="dropdown">
+						<button class="icon-btn" id="msgBtn">
+							<i class="fas fa-envelope"></i>
+							<span class="badge">2</span>
+						</button>
+						<div class="dropdown-menu msg-menu" id="msgDropdown">
+							<p class="dropdown-title">Messages</p>
+							<ul>
+								<li>
+									<img src="https://randomuser.me/api/portraits/men/12.jpg" alt="John" class="msg-avatar">
+									<div class="msg-content">
+										<strong>John Doe</strong>
+										<p>Inquiry about Treadmill delivery</p>
+									</div>
+								</li>
+								<li>
+									<img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Sophia" class="msg-avatar">
+									<div class="msg-content">
+										<strong>Sophia Patel</strong>
+										<p>Question about discount codes</p>
+									</div>
+								</li>
+							</ul>
+							<button class="view-all-btn">View all</button>
+						</div>
+					</div>
+
+					<!-- Profile Dropdown -->
+					<div class="dropdown">
+						<button class="profile-btn" id="profileBtn">
+							<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="profile-avatar">
+						</button>
+						<div class="dropdown-menu" id="profileDropdown">
+							<ul>
+								<li>View Profile</li>
+								<li>Settings</li>
+								<li>Logout</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+
+
+			<div class="dashboard_main"">
+							<div class=" container">
+				<!-- Left: Product Details -->
+				<div class="card">
+					<h2>Add Product</h2>
+
+					<div class="input-group">
+						<label for="title">Product Title</label>
+						<input type="text" id="title" placeholder="Enter product title">
+					</div>
+
+					<div class="input-group">
+						<label for="category">Category</label>
+						<select id="category">
+							<option value="">Select category</option>
+							<option value="supplements">Supplements</option>
+							<option value="equipment">Equipment</option>
+							<option value="apparel">Apparel</option>
+							<option value="accessories">Accessories</option>
+						</select>
+					</div>
+
+					<div class="input-group">
+						<label for="price">Price (₹)</label>
+						<input type="number" id="price" placeholder="Enter price">
+					</div>
+
+					<div class="input-group">
+						<label for="quantity">Quantity</label>
+						<input type="number" id="quantity" placeholder="Enter stock quantity">
+					</div>
+
+					<div class="input-group">
+						<label for="description">Description</label>
+						<textarea id="description" placeholder="Write a short description..."></textarea>
+					</div>
+				</div>
+
+				<!-- Right: Image Upload and Attributes -->
+				<div class="card">
+					<h2>Upload Images</h2>
+
+					<div class="upload-grid">
+						<div class="upload-box" data-index="0">
+							<img class="preview" style="display:none;">
+							<div class="upload-placeholder">
+								<span class="upload-icon">📷</span>
+								<p>Click or drag</p>
+							</div>
+							<input type="file" accept="image/*" hidden>
+						</div>
+
+						<div class="upload-box" data-index="1">
+							<img class="preview" style="display:none;">
+							<div class="upload-placeholder">
+								<span class="upload-icon">📷</span>
+								<p>Click or drag</p>
+							</div>
+							<input type="file" accept="image/*" hidden>
+						</div>
+					</div>
+
+					<div class="upload-info">
+						<span>You need to add at least 4 images. Pay attention to the quality of the pictures you add, comply with
+							the
+							background
+							color standards. Pictures must be in certain dimensions. Notice that the product shows all the
+							details.</span>
+					</div>
+
+					<h3>Attributes</h3>
+					<div class="attribute-section">
+						<div class="attribute-inputs">
+							<select id="attrName">
+								<option value="">Select Attribute</option>
+								<option value="Size">Size</option>
+								<option value="Weight">Weight</option>
+								<option value="Pack">Pack</option>
+								<option value="Color">Color</option>
+								<option value="Flavor">Flavor</option>
+							</select>
+							<input type="text" id="attrValue" placeholder="e.g. Large, 1kg">
+							<button id="addAttrBtn">Add</button>
+						</div>
+						<div id="attrList" class="attr-list"></div>
+					</div>
+
+
+					<div class="progress-container" style="display:none">
+						<div class="progress-bar" id="progressBar">0%</div>
+					</div>
+
+					<button id="addProductBtn" class="btn">Add Product</button>
+				</div>
+			</div>
+	</div>
+	</main>
+	</div>
+
+
+	<!-- Toast container -->
+	<div id="toast" class="toast"></div>
+		<script src="/assets/scripts/admin-panel.js"></script>
+</body>
+
+</html>

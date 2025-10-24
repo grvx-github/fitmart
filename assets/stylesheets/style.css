@@ -1,3 +1,7 @@
+/* Reset + base */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
 	--primary-1: #ff5f6d;
 	--primary-2: #ffc371;
@@ -12,11 +16,10 @@
 	--text-light: #ffffff;
 	--muted: rgba(255, 255, 255, 0.7);
 	--transition: 0.3s ease;
-	--font-main: 'Poppins', sans-serif;
+	--font-main: 'Urbanist', sans-serif;
 }
 
-/* Reset + base */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 
 * {
 	margin: 0;
@@ -31,19 +34,90 @@ body {
 
 body {
 	font-family: var(--font-main);
-	color: var(--text-light);
-	background: #000;
+	/* color: var(--text-light); */
+	/* background: #000; */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Utilities */
-.text-center {
-	text-align: center
+/* Landing Page */
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 80px;
+	z-index: 999;
 }
 
-.w-full {
-	width: 100%
+#navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+#navbar li {
+	list-style: none;
+	padding: 0 20px;
+}
+
+#navbar li a {
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 600;
+	color: #1a1a1a;
+	transition: 0.2s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+	text-decoration: underline;
+}
+
+#search-li {
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+}
+
+/* Input field style */
+#search-bar {
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px 0 0 4px;
+	outline: none;
+	font-family: "Poppins", sans-serif;
+	font-size: 14px;
+}
+
+
+#search-btn:hover {
+	background-color: #066754;
+	/* darker shade */
+}
+
+#mobile {
+	display: none;
+	align-items: center;
+}
+
+#close {
+	display: none;
+}
+
+.hero {
+	height: 100vh;
+	width: 100%;
+	padding: 0 80px;
+	display: flex;
+	flex-direction: column;
+}
+
+.hero h4 {
+	padding-bottom: 15px;
+}
+
+.hero h1 {
+	color: black;
 }
 
 .btn {
@@ -79,4 +153,355 @@ body {
 	.hide-xs {
 		display: none
 	}
+}
+
+#search-btn-nav {
+	cursor: pointer;
+	font-size: 18px;
+	padding: 0 10px;
+}
+
+#search-modal {
+	position: fixed;
+	top: -50%;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	background-color: #fff;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: top 0.3s ease;
+	z-index: 1001;
+}
+
+.search-modal-content {
+	width: 50%;
+}
+
+#search-modal input {
+	width: 100%;
+	border: none;
+	border-bottom: 2px solid #088178;
+	font-size: 16px;
+	padding: 10px 5px;
+	outline: none;
+}
+
+#search-modal i {
+	margin-left: -30px;
+	color: #088178;
+	cursor: pointer;
+}
+
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	display: none;
+	z-index: 1000;
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	text-align: center;
+	padding: 0 20px;
+	/* reduced from 80px */
+}
+
+.hero img {
+	max-width: 80%;
+	margin-bottom: 20px;
+}
+
+.hero h4,
+.hero h2,
+.hero h1,
+.hero p {
+	width: 100%;
+}
+
+.search-btn {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.user-avatar {
+	width: 24px;
+	height: 24px;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+.categories {
+	padding: 50px 20px;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.categories .flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+/* Section Header */
+.categories h4 {
+	font-size: 16px;
+	color: #888;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+}
+
+.categories h3 {
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	display: inline-block;
+	position: relative;
+}
+
+/* Underline with gap */
+.categories h3::after {
+	content: "";
+	display: block;
+	width: 80px;
+	height: 3px;
+	background: #ff6600;
+	margin-top: 12px;
+}
+
+/* Category boxes container */
+.categories .flex:nth-of-type(2) {
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+/* Individual box */
+.categories .col {
+	position: relative;
+	overflow: hidden;
+	flex: 1 1 calc(25% - 15px);
+	background: #f9f9f9;
+	cursor: pointer;
+	padding: 0;
+	border-radius: 5px;
+	/* sharper edges */
+	height: 250px;
+	/* slightly bigger */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+/* Image styling */
+.categories .col img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.4s ease;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+/* Overlay on hover */
+.categories .col::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	transition: background 0.3s ease;
+	z-index: 2;
+}
+
+.categories .col:hover::before {
+	background: rgba(0, 0, 0, 0.4);
+}
+
+/* Text container inside box */
+.categories .col h5,
+.categories .col p {
+	position: relative;
+	font-size: 2rem;
+	font-weight: 600;
+	z-index: 3;
+	color: #fff;
+	margin: 5px 0;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.categories .col p {
+	opacity: 0;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+/* Hover effects */
+.categories .col:hover img {
+	transform: scale(1.1);
+}
+
+.categories .col:hover h5 {
+	transform: translateY(-5px);
+}
+
+.categories .col:hover p {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Shop Now arrow animation */
+.categories .col p i {
+	margin-left: 5px;
+	transition: transform 0.3s ease;
+}
+
+.categories .col:hover p i {
+	transform: translateX(5px);
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+	.categories .col {
+		flex: 1 1 calc(50% - 15px);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.categories .col {
+		flex: 1 1 100%;
+	}
+}
+
+/* Text container */
+.categories .col .text-container {
+	position: relative;
+	z-index: 3;
+	color: #fff;
+	padding: 15px;
+	transition: all 0.3s ease;
+}
+
+/* Main title */
+.categories .col h5 {
+	margin: 0;
+	font-size: 1.5rem;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Shop Now text hidden initially */
+.categories .col .shop-now {
+	opacity: 0;
+	font-size: 16px;
+	margin-top: 8px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 5px;
+	transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.categories .col:hover img {
+	transform: scale(1.1);
+}
+
+.categories .col:hover h5 {
+	transform: translateY(-20px);
+}
+
+.categories .col:hover .shop-now {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.categories .col .shop-now i {
+	transition: transform 0.3s ease;
+}
+
+.categories .col:hover .shop-now i {
+	transform: translateX(5px);
+}
+
+/* Feature section */
+/* Feature section */
+#feature {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 8%;
+	gap: 20px;
+	/* space between each box */
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+}
+
+/* Individual feature box */
+.fe-box {
+	display: flex;
+	align-items: center;
+	background: #fff;
+	/* optional light background */
+	padding: 20px 25px;
+	border-radius: 6px;
+	flex: 1 1 220px;
+	/* responsive width */
+	min-width: 200px;
+	position: relative;
+	gap: 15px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+	/* subtle shadow */
+}
+
+/* Image inside feature box */
+.fe-box img {
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+/* Text container */
+.fe-box h6 {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+}
+
+/* Small description under heading */
+.fe-box p {
+	margin: 4px 0 0 0;
+	font-size: 14px;
+	color: #777;
+	line-height: 1.4;
+}
+
+/* Separator line */
+.fe-box:not(:last-child)::after {
+	content: '';
+	position: absolute;
+	right: -10px;
+	top: 10%;
+	width: 1px;
+	height: 80%;
+	background: rgba(0, 0, 0, 0.2);
+	/* subtle separator */
 }
