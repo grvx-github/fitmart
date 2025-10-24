@@ -5,20 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/add5bfa3f7.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
-    <script src="Script.js"></script>
+    <script src="script.js" defer></script>
     <section id="header">
         <a href="#"><img src="assets/hercules logo.png" class="logo" alt="LOGO"></a>
     <div>
         <ul id="navbar">
             <li><a href="index.html" >Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
+                    <li class="has-dropdown">
+                        <a href="shop.html">Shop</a>
+                        <ul class="dropdown">
+                            <li><a href="shop.html">All Products</a></li>
+                            <li><a href="shop.html?cat=equipment">Equipments</a></li>
+                            <li><a href="shop.html?cat=supplements">Supplements</a></li>
+                            <li><a href="shop.html?cat=apparel">Apparel</a></li>
+                            <li><a href="shop.html?cat=accessories">Accessories</a></li>
+                        </ul>
+                    </li>
             <li><a href="contact.html"class="active">Contact</a></li>
             <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            <li id="lg-login"><a href="login.html" id="login-link"><i class="fa-solid fa-user"></i> Login</a></li>
             <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
         </ul>
 

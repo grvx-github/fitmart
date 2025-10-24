@@ -55,6 +55,8 @@
 				await signInWithEmailAndPassword(auth, email, password)
 				msg.textContent = "✅ Login successful!"
 				msg.style.color = "lime"
+				// mark as logged in for header UI
+				localStorage.setItem('isLoggedIn', '1')
 				setTimeout(() => (window.location.href = "index.html"), 1000)
 			} catch (err) {
 				msg.textContent = "❌ " + err.message
@@ -67,6 +69,7 @@
 				await signInWithPopup(auth, provider)
 				msg.textContent = "✅ Google sign-in successful!"
 				msg.style.color = "lime"
+				localStorage.setItem('isLoggedIn', '1')
 				setTimeout(() => (window.location.href = "index.html"), 1000)
 			} catch (err) {
 				msg.textContent = "❌ " + err.message

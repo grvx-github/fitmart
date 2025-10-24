@@ -14,7 +14,7 @@
 <body>
   <script src="script.js" defer></script>
   <section id="header">
-    <a href="#"><img src="assets/hercules logo.png" class="logo" alt="LOGO"></a>
+    <a href="#"><img src="assets/fitmartLOGO-removebg-new.png" class="logo" alt="LOGO"></a>
     <div>
       <ul id="navbar">
         <li id="search-li">
@@ -23,9 +23,19 @@
         </li>
 
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li class="has-dropdown">
+          <a href="shop.html">Shop</a>
+          <ul class="dropdown">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=equipment">Equipments</a></li>
+            <li><a href="shop.html?cat=supplements">Supplements</a></li>
+            <li><a href="shop.html?cat=apparel">Apparel</a></li>
+            <li><a href="shop.html?cat=accessories">Accessories</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
         <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+  <li id="lg-login"><a href="login.html" id="login-link"><i class="fa-solid fa-user"></i> Login</a></li>
         <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
       </ul>
 

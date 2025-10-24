@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Details | Hercules Fitness</title>
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/add5bfa3f7.js" crossorigin="anonymous"></script>
 </head>
 
@@ -15,10 +15,20 @@
     <div>
       <ul id="navbar">
         <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html" class="active">Shop</a></li>
+        <li class="has-dropdown">
+          <a href="shop.html" class="active">Shop</a>
+          <ul class="dropdown">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=equipment">Equipments</a></li>
+            <li><a href="shop.html?cat=supplements">Supplements</a></li>
+            <li><a href="shop.html?cat=apparel">Apparel</a></li>
+            <li><a href="shop.html?cat=accessories">Accessories</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
-        <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+  <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+  <li id="lg-login"><a href="login.html" id="login-link"><i class="fa-solid fa-user"></i> Login</a></li>
+  <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
       </ul>
     </div>
     <div id="mobile">
@@ -95,7 +105,7 @@
     </div>
   </footer>
 
-  <script src="Script.js"></script>
+  <script src="script.js"></script>
 
   <script>
     // ---------- PRODUCT DATA ----------
@@ -115,7 +125,16 @@
       { id: 12, name: "DB06 Dumbbells", image: "assets/DUMBBELL.png", price: 20860, description: "Durable dumbbells for free weight training." },
       { id: 13, name: "PL06 Weight Plates", image: "assets/PLATES.png", price: 35000, description: "Rubber-coated weight plates for safe and quiet workouts." },
       { id: 14, name: "BR06 Curl Barbell", image: "assets/BAR.png", price: 3020, description: "Chrome curl barbell for arm training and grip comfort." },
-      { id: 15, name: "BL06 Medicine Ball", image: "assets/BALL.png", price: 4000, description: "High-bounce medicine ball for strength and stability exercises." }
+      { id: 15, name: "BL06 Medicine Ball", image: "assets/BALL.png", price: 4000, description: "High-bounce medicine ball for strength and stability exercises." },
+      { id: 16, name: "Protein Blend", image: "assets/ProteinBleand.jpeg", price: 2500, description: "Whey Protein Blend - 2kg | 5.5g BCAA, Chocolate Flavour | Supports Muscle Growth and Recovery." },
+      { id: 17, name: "Pre-Workout", image: "assets/pre-workout.jpeg", price: 1800, description: "High-energy pre-workout mix for performance boost." },
+      { id: 18, name: "Multivitamin", image: "assets/multivitamin.jpeg", price: 1200, description: "Daily multivitamin to support overall health." },
+      { id: 19, name: "Performance Tee", image: "assets/Performancetee3.png", price: 799, description: "Lightweight performance tee for training." },
+      { id: 20, name: "Training Shorts", image: "assets/shorts.png", price: 999, description: "Comfortable training shorts with quick-dry fabric." },
+      { id: 21, name: "Hoodie", image: "assets/hoodie.png", price: 1599, description: "Warm hoodie for warmups and cool-downs." },
+      { id: 22, name: "Gym Gloves", image: "assets/gymgloves.jpeg", price: 499, description: "Protective gym gloves for better grip." },
+      { id: 23, name: "Water Bottle", image: "assets/waterbottle.png", price: 299, description: "Durable water bottle for workouts." },
+      // { id: 24, name: "Resistance Band2", image: "assets/resistanceband.jpeg", price: 349, description: "Versatile resistance band for mobility and strength." }
     ];
 
     // ---------- GET PRODUCT ID FROM URL ----------
