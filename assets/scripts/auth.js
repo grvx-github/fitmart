@@ -1,3 +1,5 @@
+	// auth.js
+	
 	import { auth, provider } from "/assets/scripts/firebase.js"
 		import {
 			createUserWithEmailAndPassword,
