@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Hercules Fitness</title>
+  <link rel="stylesheet" href="Style.css">
+  <script src="https://kit.fontawesome.com/add5bfa3f7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <section id="header">
+    <a href="#"><img src="assets/hercules logo.png" class="logo" alt="LOGO"></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+      <a href="#" id="bar"><i class="fa-solid fa-bars"></i></a>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAILS SECTION -->
+  <section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+      <img id="product-img" src="" width="100%" alt="">
+    </div>
+
+    <div class="single-pro-details">
+      <h6>Home / Product</h6>
+      <h4 id="product-name"></h4>
+      <h2 id="product-price"></h2>
+      <input type="number" value="1" id="product-qty">
+      <button class="normal" id="addToCartBtn">Add To Cart</button>
+      <h4>Product Details</h4>
+      <span id="product-desc"></span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="section-p1">
+    <div class="col">
+      <img src="assets/hercules logo.png" alt="">
+      <h4>Contact</h4>
+      <p><strong>Address:</strong> Whitefield, Bangalore</p>
+      <p><strong>Phone:</strong> +911 9113867821</p>
+      <p><strong>Hours:</strong> 10:00-18:00, Mon - Sat</p>
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About Us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="col install">
+      <h4>Install App</h4>
+      <p>From App Store or Google Play</p>
+      <div class="row">
+        <img src="assets/appstore.jpg" alt="">
+        <img src="assets/playstore.jpg" alt="">
+      </div>
+      <p>Secured Payment Gateways</p>
+      <img src="assets/pay.png" alt="">
+    </div>
+
+    <div class="copyright">
+      <p>2025, Hercules Fitness - Ecommerce Website</p>
+    </div>
+  </footer>
+
+  <script src="Script.js"></script>
+
+  <script>
+    // ---------- PRODUCT DATA ----------
+    const products = [
+      { id: 0, name: "TMA60", image: "assets/TMA60.png", price: 169000, description: "High-performance treadmill built for endurance and durability." },
+      { id: 1, name: "ELP70", image: "assets/elp70.png", price: 370000, description: "Smooth and quiet elliptical trainer with adjustable resistance." },
+      { id: 2, name: "RBP70", image: "assets/rbp70.png", price: 290000, description: "Ergonomic recumbent bike designed for comfort and cardio training." },
+      { id: 3, name: "Flexion Lat Pull Down & Mid Row", image: "assets/Flexion-Lat-Pull-Down-Mid-Row.png", price: 275000, description: "Dual-purpose machine for comprehensive back and shoulder workouts." },
+      { id: 4, name: "Armour Shoulder Press", image: "assets/AR03.png", price: 300000, description: "Plate-loaded shoulder press for serious strength building." },
+      { id: 5, name: "Eclipse Smith & Functional Trainer", image: "assets/ECLIPSE.png", price: 150000, description: "All-in-one Smith and functional trainer for full-body workouts." },
+      { id: 6, name: "Fusion 45° Incline Squat", image: "assets/FUSION.png", price: 200000, description: "Precision incline squat machine with solid construction." },
+      { id: 7, name: "Wave Incline Bench", image: "assets/WAVE.png", price: 120000, description: "Durable adjustable incline bench for versatile training." },
+      { id: 8, name: "UBS90 Upright Bike", image: "assets/ubs90.png", price: 756000, description: "Professional upright bike offering comfort and digital tracking." },
+      { id: 9, name: "DIO5 Leg Extension", image: "assets/LEGEXTENSION.png", price: 316655, description: "Leg extension machine designed for lower body strength development." },
+      { id: 10, name: "DI16 Hip Abduction & Adduction", image: "assets/HIP ABDUCTION.png", price: 2999, description: "Dual-function machine for hip abduction and adduction exercises." },
+      { id: 11, name: "BC06 Biceps Curl", image: "assets/BICEPS CURL.png", price: 159640, description: "Ergonomic bicep curl machine with adjustable seat height." },
+      { id: 12, name: "DB06 Dumbbells", image: "assets/DUMBBELL.png", price: 20860, description: "Durable dumbbells for free weight training." },
+      { id: 13, name: "PL06 Weight Plates", image: "assets/PLATES.png", price: 35000, description: "Rubber-coated weight plates for safe and quiet workouts." },
+      { id: 14, name: "BR06 Curl Barbell", image: "assets/BAR.png", price: 3020, description: "Chrome curl barbell for arm training and grip comfort." },
+      { id: 15, name: "BL06 Medicine Ball", image: "assets/BALL.png", price: 4000, description: "High-bounce medicine ball for strength and stability exercises." }
+    ];
+
+    // ---------- GET PRODUCT ID FROM URL ----------
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get("id"));
+
+    const product = products.find(p => p.id === productId);
+
+    if (product) {
+      document.getElementById("product-img").src = product.image;
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-price").textContent = "₹" + product.price.toLocaleString();
+      document.getElementById("product-desc").textContent = product.description;
+    } else {
+      document.getElementById("prodetails").innerHTML = "<h2>Product not found.</h2>";
+    }
+
+    // ---------- ADD TO CART ----------
+    document.getElementById("addToCartBtn").addEventListener("click", () => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const qty = parseInt(document.getElementById("product-qty").value);
+
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        cart.push({ ...product, qty });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("✅ " + product.name + " added to cart!");
+      window.location.href = "cart.html";
+    });
+  </script>
+</body>
+</html>
