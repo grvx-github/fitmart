@@ -49,27 +49,21 @@ export async function loadUserCart() {
 		try {
 			const userRef = doc(db, "users", user.uid);
 			const userSnap = await getDoc(userRef);
-
-			if (!userSnap.exists()) {
-				console.warn("User document not found.");
-				return;
-			}
+			if (!userSnap.exists()) return;
 
 			const userData = userSnap.data();
 			let cartIds = userData.cart || [];
-
 			const tbody = document.querySelector("#cart tbody");
 			tbody.innerHTML = "";
 
 			if (cartIds.length === 0) {
-				tbody.innerHTML =
-					`<tr class='empty-cart'><td colspan="6" style="text-align:center;">Your cart is empty 🛒</td></tr>`;
+				tbody.innerHTML = `<tr class='empty-cart'><td colspan="6" style="text-align:center;">Your cart is empty 🛒</td></tr>`;
 				document.getElementById("subtotal-value").innerText = `Rs 0`;
 				document.getElementById("total-value").innerText = `Rs 0`;
 				return;
 			}
 
-			// Fetch Firestore products in cart
+			// Fetch Firestore products
 			const productsRef = collection(db, "products");
 			let firestoreProducts = [];
 			if (cartIds.length > 0) {
@@ -86,19 +80,14 @@ export async function loadUserCart() {
 				});
 			}
 
-			// Merge mockProducts + Firestore products
 			const allProducts = [...mockProducts, ...firestoreProducts];
-
-			// Filter only products in user's cart
 			const cartProducts = allProducts.filter(p => cartIds.includes(p.id));
-			console.log("Cart Products:", cartProducts);
 
 			// Render cart
 			let subtotal = 0;
-			cartProducts.forEach((p) => {
+			cartProducts.forEach(p => {
 				const price = parseFloat(p.price) || 0;
 				subtotal += price;
-
 				tbody.innerHTML += `
           <tr>
             <td><i class="fa-solid fa-trash remove-item" data-id="${p.id}"></i></td>
@@ -113,25 +102,41 @@ export async function loadUserCart() {
 			document.getElementById("subtotal-value").innerText = `Rs ${subtotal}`;
 			document.getElementById("total-value").innerText = `Rs ${subtotal}`;
 
-			// Attach remove-item click listeners
+			// Remove item listeners
 			tbody.querySelectorAll(".remove-item").forEach(btn => {
 				btn.addEventListener("click", async () => {
 					const productId = btn.dataset.id;
-					try {
-						// Remove from Firestore
-						await updateDoc(userRef, { cart: arrayRemove(productId) });
-						// Update local cartIds array and re-render
-						cartIds = cartIds.filter(id => id !== productId);
-						loadUserCart(); // re-render cart
-					} catch (err) {
-						console.error("❌ Failed to remove item:", err);
-						alert("Failed to remove item from cart.");
-					}
+					await updateDoc(userRef, { cart: arrayRemove(productId) });
+					cartIds = cartIds.filter(id => id !== productId);
+					loadUserCart();
 				});
 			});
+
+			// ✅ Proceed to checkout
+			const checkoutBtn = document.querySelector("#checkout");
+			if (checkoutBtn) {
+				checkoutBtn.onclick = () => {
+					const checkoutData = {
+						userName: userData.name || "",
+						userEmail: user.email,
+						products: cartProducts.map(p => ({
+							title: p.title,
+							price: parseFloat(p.price) || 0,
+							img: p.images ? p.images[0] : p.img,
+							quantity: 1,
+							discount: 0
+						}))
+					};
+					sessionStorage.setItem("checkoutData", JSON.stringify(checkoutData));
+					window.location.href = "billing.html";
+				};
+			}
 
 		} catch (err) {
 			console.error("❌ Failed to load cart:", err);
 		}
 	});
 }
+
+
+
