@@ -26,7 +26,7 @@
         <li id="search-btn-nav"><i class="fa-solid fa-magnifying-glass"></i></li>
         <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
 
-     
+
       </ul>
 
       <!-- Add this modal below your header section -->
@@ -101,9 +101,9 @@
         </div>
       </div>
     </div>
-    
+
   </section>
-    <section id="feature" class="flex justify-between px-32">
+  <section id="feature" class="flex justify-between px-32">
     <div class="fe-box">
       <img src="/assets/images/home/gift-box.png" alt="">
       <div class="text">
@@ -111,7 +111,7 @@
         <p>On all orders above $50</p>
       </div>
     </div>
-    
+
     <div class="fe-box">
       <img src="/assets/images/home/discount.png" alt="">
       <div class="text">
@@ -119,7 +119,7 @@
         <p>Guaranteed low prices</p>
       </div>
     </div>
-    
+
     <div class="fe-box">
       <img src="/assets/images/home/wallet.png" alt="">
       <div class="text">
@@ -127,7 +127,7 @@
         <p>Secure online transactions</p>
       </div>
     </div>
-    
+
     <div class="fe-box">
       <img src="/assets/images/home/bag.png" alt="">
       <div class="text">
@@ -137,155 +137,51 @@
     </div>
 
 
-    </section>
+  </section>
   <section id="product1" class="section-p1">
-    <h2>Featured Products</h2>
-    <p>EXPLORE HERCULES DIFFERENCE</p>
-    <div class="pro-container">
-      <div class="pro" onclick="window.location.href='sproduct.html?id=0'">
-        <img src="assets/TMA60.png" alt="">
+    <div class="flex justify-between align-center" style="margin-bottom: 4rem;">
+      <div>
+        <h4 style="font-size:16px;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;">featured
+        </h4>
+        <h3 style="font-size:32px;font-weight:600;position:relative;display:inline-block;">
+          Featured Products
+          <span style="content:'';display:block;width:80px;height:3px;background:#ff6600;margin-top:12px;"></span>
+        </h3>
+      </div>
+      <div>
+        <p style="cursor:pointer;font-weight:500;">Explore All Products <i class="fa-solid fa-arrow-right"></i></p>
+      </div>
+    </div>
+
+    <div class="pro-container flex gap-4 flex-wrap">
+      <div class="pro">
+        <div class="flex flex-col relative">
+          <img src="assets/TMA60.png" alt="">
+          <button class="quick-view" onclick="openQuickView(0)">Quick View</button>
+        </div>
+
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
         <div class="des">
           <span>TREADMILL</span>
-          <h5>TMA60</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
           <h4>Rs 169000</h4>
-        </div>
-        <a href="#" onclick="addToCart(0)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
-      </div>
-
-
-      <div class="pro" onclick="window.location.href='sproduct.html?id=1'">
-        <img src="assets/elp70.png" alt="">
-        <div class="des">
-          <span>ELLIPTICAL</span>
-          <h5>ELP70</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+          <div class="hover-actions">
+            <button class="select-options" onclick="window.location.href='sproduct.html?id=0'">
+              <i class="fa-solid fa-cart-shopping"></i> Select Options
+            </button>
           </div>
-          <h4>Rs 370000</h4>
         </div>
-        <a href="#" onclick="addToCart(1)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
-      </div>
-
-
-      <div class="pro" onclick="window.location.href='sproduct.html?id=2'">
-        <img src="assets/rbp70.png" alt="">
-        <div class="des">
-          <span>RECUMBENT BIKES</span>
-          <h5>RBP70</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>Rs 290000</h4>
-        </div>
-        <a href="#" onclick="addToCart(2)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
-      </div>
-
-
-      <div class="pro" onclick="window.location.href='sproduct.html?id=3'">
-        <img src="assets/Flexion-Lat-Pull-Down-Mid-Row.png" alt="">
-        <div class="des">
-          <span>PIN LOADED</span>
-          <h5>FLEXION- LAT PULL DOWN AND MID ROW</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>Rs 275000</h4>
-        </div>
-        <a href="#" onclick="addToCart(3)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
-      </div>
-
-
-      <div class="pro" onclick="window.location.href='sproduct.html?id=4'">
-        <img src="assets/AR03.png" alt="">
-        <div class="des">
-          <span>PLATE LOADED</span>
-          <h5>ARMOUR - SHOULDER PRESS</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>Rs 300000</h4>
-        </div>
-        <a href="#" onclick="addToCart(4)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
-      </div>
-
-
-      <div class="pro" onclick="window.location.href='sproduct.html?id=5'">
-        <img src="assets/ECLIPSE.png" alt="">
-        <div class="des">
-          <span>ECLIPSE</span>
-          <h5>SMITH AND FUNCTIONAL TRAINER</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>Rs 150000</h4>
-        </div>
-        <a href="#" onclick="addToCart(5)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
-      </div>
-
-
-      <div class="pro" onclick="window.location.href='sproduct.html?id=6'">
-        <img src="assets/FUSION.png" alt="">
-        <div class="des">
-          <span>FUSION</span>
-          <h5>45 DEGREE INCLINE SQUAT</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>Rs 200000</h4>
-        </div>
-        <a href="#" onclick="addToCart(6)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
-      </div>
-
-
-      <div class="pro" onclick="window.location.href='sproduct.html?id=7'">
-        <img src="assets/WAVE.png" alt="">
-        <div class="des">
-          <span>WAVE</span>
-          <h5>INCLINE BENCH</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>Rs 120000</h4>
-        </div>
-        <a href="#" onclick="addToCart(7)"><i class="fa-solid fa-cart-shopping-icon" id="cart"></i></a>
       </div>
     </div>
   </section>
+
+
+  <!-- Quick View Modal -->
+  <div id="quickViewModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
 
   <section id="newsletter" class="section-p1 section-m1">
     <div class="newstext">
@@ -363,6 +259,40 @@
       searchModal.style.top = '-50%';
       overlay.style.display = 'none';
     });
+
+    // Handle Quick View modal
+    const modal = document.getElementById("quickViewModal");
+    const modalBody = document.getElementById("modal-body");
+    const closeModal = document.querySelector(".close-modal");
+
+    document.querySelectorAll(".quick-view").forEach(btn => {
+      btn.addEventListener("click", e => {
+        e.stopPropagation();
+        const product = btn.closest(".pro");
+        const id = product.dataset.id;
+        modalBody.innerHTML = `
+      <h3>${product.querySelector("h5").innerText}</h3>
+      <img src="${product.querySelector("img").src}" style="width:100%;height:250px;object-fit:contain;">
+      <p>${product.querySelector("span").innerText}</p>
+      <h4>${product.querySelector("h4").innerText}</h4>
+    `;
+        modal.style.display = "flex";
+      });
+    });
+
+    closeModal.onclick = () => (modal.style.display = "none");
+    window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
+
+    // Redirect when "Select Options" clicked
+    document.querySelectorAll(".select-btn").forEach(btn => {
+      btn.addEventListener("click", e => {
+        e.stopPropagation();
+        const product = btn.closest(".pro");
+        const id = product.dataset.id;
+        window.location.href = `sproduct.html?id=${id}`;
+      });
+    });
+
 
   </script>
 </body>

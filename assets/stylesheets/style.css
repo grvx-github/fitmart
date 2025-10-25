@@ -505,3 +505,147 @@ body {
 	background: rgba(0, 0, 0, 0.2);
 	/* subtle separator */
 }
+
+.section-p1{
+	padding: 4rem 8rem;
+}
+.pro .hover-actions button{
+	width: 100%;
+	text-align: left;
+}
+
+.pro .hover-actions button:hover {
+	color: #333;
+}
+
+.pro .hover-actions .quick-view {
+	background: transparent;
+	color: #333;
+	border: 1px solid #ccc;
+}
+
+.pro .hover-actions .quick-view:hover {
+	background: #f3f3f3;
+}
+
+.pro {
+	position: relative;
+	background: #fff;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	max-width: 300px;
+}
+
+
+/* ---------- QUICK VIEW BUTTON ---------- */
+.quick-view {
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	padding: 0.8rem 0;
+	background: rgba(83, 83, 83, 0.9);
+	color: #fff;
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: 500;
+	border: none;
+	cursor: pointer;
+	transition: all 0.35s ease;
+	z-index: 2;
+	opacity: 0;
+}
+
+.pro:hover .quick-view {
+	bottom: 0;
+	opacity: 1;
+}
+
+.quick-view:hover {
+	background: rgba(60, 60, 60, 0.9);
+	color: #999;
+}
+
+.des {
+	position: relative;
+	padding: 1rem;
+	transition: all 0.3s ease;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+
+.des h4 {
+	position: relative;
+	z-index: 1;
+	color: #777;
+	transition: all 0.3s ease;
+	margin-top: 0.25rem;
+}
+
+.hover-actions {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	transform: translateY(50%);
+	opacity: 0;
+	transition: all 0.35s ease;
+}
+
+.pro:hover .hover-actions {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.pro:hover .des h4 {
+	opacity: 0;
+}
+
+.hover-actions button.select-options {
+	padding: 0.5rem 1.2rem;
+	border-radius: 6px;
+	border: none;
+	color: #777;
+	font-size: 1rem;
+	font-weight: 400;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: none;
+}
+
+.hover-actions button.select-options:hover {
+	color: #333;
+}
+
+.pro .wishlist-btn {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+
+.pro .wishlist-btn:hover {
+	color: #373636;
+}
+
+.pro .wishlist-btn i {
+	font-size: 18px;
+	color: #333;
+	transition: all 0.3s ease;
+}
+
+.pro .wishlist-btn:hover i {
+	color: #373636;
+}
+
