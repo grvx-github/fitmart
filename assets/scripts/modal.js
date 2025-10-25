@@ -1,6 +1,6 @@
 // assets/scripts/modal.js
 
-import { addToCart } from "/assets/scripts/cart.js";
+import { addToCart } from "../scripts/cart.js";
 
 export function initQuickViewModal() {
 	const modal = document.getElementById("quickViewModal");
