@@ -5,7 +5,7 @@ export const products = [
     category: "Footwear",
     price: 2999,
     quantity: 15,
-    images: ["https://via.placeholder.com/40x40?text=Shoes"
+    images: ["/assets/images/products/Accessories/gymgloves.jpeg"
     ]
   },
   {
@@ -14,7 +14,7 @@ export const products = [
     category: "Apparel",
     price: 799,
     quantity: 30,
-    images: ["https://via.placeholder.com/40x40?text=T-Shirt"]
+    images: ["/assets/images/products/Apparel/hoodie.png"]
   },
   {
     id: "3",
@@ -22,7 +22,7 @@ export const products = [
     category: "Accessories",
     price: 499,
     quantity: 20,
-    images: ["https://via.placeholder.com/40x40?text=Mat"
+    images: ["/assets/images/products/Equipments/AR03.png"
     ]
   },
   {
@@ -31,7 +31,7 @@ export const products = [
     category: "Equipment",
     price: 2599,
     quantity: 10,
-    images: ["https://via.placeholder.com/40x40?text=Dumbbell"
+    images: ["/assets/images/products/Supplements/multivitamin.jpeg"
     ]
   },
   {
@@ -40,7 +40,7 @@ export const products = [
     category: "Accessories",
     price: 299,
     quantity: 50,
-    images: ["https://via.placeholder.com/40x40?text=Bottle"
+    images: ["/assets/images/products/Accessories/waterbottle.png"
     ]
   }
 ];

@@ -1,6 +1,5 @@
-/* Reset + base */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap);
 
 :root {
 	--primary-1: #ff5f6d;
@@ -16,10 +15,8 @@
 	--text-light: #ffffff;
 	--muted: rgba(255, 255, 255, 0.7);
 	--transition: 0.3s ease;
-	--font-main: 'Urbanist', sans-serif;
+	--font-main: 'Urbanist', sans-serif
 }
-
-
 
 * {
 	margin: 0;
@@ -34,19 +31,20 @@ body {
 
 body {
 	font-family: var(--font-main);
-	/* color: var(--text-light); */
-	/* background: #000; */
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: grayscale
 }
 
-/* Landing Page */
 #header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px 80px;
-	z-index: 999;
+	z-index: 999
+}
+.logo{
+	width: 200px;
+	cursor: pointer
 }
 
 #navbar {
@@ -57,7 +55,7 @@ body {
 
 #navbar li {
 	list-style: none;
-	padding: 0 20px;
+	padding: 0 20px
 }
 
 #navbar li a {
@@ -65,43 +63,40 @@ body {
 	font-size: 18px;
 	font-weight: 600;
 	color: #1a1a1a;
-	transition: 0.2s ease;
+	transition: 0.2s ease
 }
 
 #navbar li a:hover,
 #navbar li a.active {
-	text-decoration: underline;
+	text-decoration: underline
 }
 
 #search-li {
 	display: flex;
 	align-items: center;
-	margin-right: 20px;
+	margin-right: 20px
 }
 
-/* Input field style */
 #search-bar {
 	padding: 6px 12px;
 	border: 1px solid #ccc;
 	border-radius: 4px 0 0 4px;
 	outline: none;
 	font-family: "Poppins", sans-serif;
-	font-size: 14px;
+	font-size: 14px
 }
 
-
 #search-btn:hover {
-	background-color: #066754;
-	/* darker shade */
+	background-color: #066754
 }
 
 #mobile {
 	display: none;
-	align-items: center;
+	align-items: center
 }
 
 #close {
-	display: none;
+	display: none
 }
 
 .hero {
@@ -109,15 +104,15 @@ body {
 	width: 100%;
 	padding: 0 80px;
 	display: flex;
-	flex-direction: column;
+	flex-direction: column
 }
 
 .hero h4 {
-	padding-bottom: 15px;
+	padding-bottom: 15px
 }
 
 .hero h1 {
-	color: black;
+	color: #000
 }
 
 .btn {
@@ -129,7 +124,7 @@ body {
 	border: none;
 	cursor: pointer;
 	transition: var(--transition);
-	font-weight: 600;
+	font-weight: 600
 }
 
 .btn:hover {
@@ -137,18 +132,17 @@ body {
 }
 
 .btn-ghost {
-	background: transparent;
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	color: var(--text-light);
+	background: #fff0;
+	border: 1px solid rgb(255 255 255 / .08);
+	color: var(--text-light)
 }
 
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 1rem;
+	padding: 0 1rem
 }
 
-/* Responsive helpers */
 @media (max-width:480px) {
 	.hide-xs {
 		display: none
@@ -158,7 +152,7 @@ body {
 #search-btn-nav {
 	cursor: pointer;
 	font-size: 18px;
-	padding: 0 10px;
+	padding: 0 10px
 }
 
 #search-modal {
@@ -168,16 +162,16 @@ body {
 	width: 100%;
 	height: 50%;
 	background-color: #fff;
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 8px 20px rgb(0 0 0 / .3);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	transition: top 0.3s ease;
-	z-index: 1001;
+	z-index: 1001
 }
 
 .search-modal-content {
-	width: 50%;
+	width: 50%
 }
 
 #search-modal input {
@@ -186,13 +180,13 @@ body {
 	border-bottom: 2px solid #088178;
 	font-size: 16px;
 	padding: 10px 5px;
-	outline: none;
+	outline: none
 }
 
 #search-modal i {
 	margin-left: -30px;
 	color: #088178;
-	cursor: pointer;
+	cursor: pointer
 }
 
 #overlay {
@@ -201,9 +195,9 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgb(0 0 0 / .3);
 	display: none;
-	z-index: 1000;
+	z-index: 1000
 }
 
 .hero {
@@ -213,26 +207,25 @@ body {
 	justify-content: center;
 	height: 100vh;
 	text-align: center;
-	padding: 0 20px;
-	/* reduced from 80px */
+	padding: 0 20px
 }
 
 .hero img {
 	max-width: 80%;
-	margin-bottom: 20px;
+	margin-bottom: 20px
 }
 
 .hero h4,
 .hero h2,
 .hero h1,
 .hero p {
-	width: 100%;
+	width: 100%
 }
 
 .search-btn {
-	background-color: transparent;
+	background-color: #fff0;
 	border: none;
-	cursor: pointer;
+	cursor: pointer
 }
 
 .user-avatar {
@@ -241,29 +234,28 @@ body {
 	border: 1px solid #ccc;
 	border-radius: 50%;
 	object-fit: cover;
-	cursor: pointer;
+	cursor: pointer
 }
 
 .categories {
 	padding: 50px 20px;
 	max-width: 1200px;
-	margin: auto;
+	margin: auto
 }
 
 .categories .flex {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 30px;
+	margin-bottom: 30px
 }
 
-/* Section Header */
 .categories h4 {
 	font-size: 16px;
 	color: #888;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	margin-bottom: 5px;
+	margin-bottom: 5px
 }
 
 .categories h3 {
@@ -271,26 +263,23 @@ body {
 	font-weight: 600;
 	margin-bottom: 20px;
 	display: inline-block;
-	position: relative;
+	position: relative
 }
 
-/* Underline with gap */
 .categories h3::after {
 	content: "";
 	display: block;
 	width: 80px;
 	height: 3px;
-	background: #ff6600;
-	margin-top: 12px;
+	background: #f60;
+	margin-top: 12px
 }
 
-/* Category boxes container */
 .categories .flex:nth-of-type(2) {
 	gap: 20px;
-	flex-wrap: wrap;
+	flex-wrap: wrap
 }
 
-/* Individual box */
 .categories .col {
 	position: relative;
 	overflow: hidden;
@@ -299,15 +288,12 @@ body {
 	cursor: pointer;
 	padding: 0;
 	border-radius: 5px;
-	/* sharper edges */
 	height: 250px;
-	/* slightly bigger */
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: flex-end
 }
 
-/* Image styling */
 .categories .col img {
 	width: 100%;
 	height: 100%;
@@ -316,10 +302,9 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 1
 }
 
-/* Overlay on hover */
 .categories .col::before {
 	content: "";
 	position: absolute;
@@ -327,16 +312,15 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgb(0 0 0 / .5);
 	transition: background 0.3s ease;
-	z-index: 2;
+	z-index: 2
 }
 
 .categories .col:hover::before {
-	background: rgba(0, 0, 0, 0.4);
+	background: rgb(0 0 0 / .4)
 }
 
-/* Text container inside box */
 .categories .col h5,
 .categories .col p {
 	position: relative;
@@ -345,69 +329,63 @@ body {
 	z-index: 3;
 	color: #fff;
 	margin: 5px 0;
-	transition: transform 0.3s ease, opacity 0.3s ease;
+	transition: transform 0.3s ease, opacity 0.3s ease
 }
 
 .categories .col p {
 	opacity: 0;
 	font-weight: 500;
-	font-size: 16px;
+	font-size: 16px
 }
 
-/* Hover effects */
 .categories .col:hover img {
-	transform: scale(1.1);
+	transform: scale(1.1)
 }
 
 .categories .col:hover h5 {
-	transform: translateY(-5px);
+	transform: translateY(-5px)
 }
 
 .categories .col:hover p {
 	opacity: 1;
-	transform: translateY(0);
+	transform: translateY(0)
 }
 
-/* Shop Now arrow animation */
 .categories .col p i {
 	margin-left: 5px;
-	transition: transform 0.3s ease;
+	transition: transform 0.3s ease
 }
 
 .categories .col:hover p i {
-	transform: translateX(5px);
+	transform: translateX(5px)
 }
 
-/* Responsive */
-@media screen and (max-width: 992px) {
+@media screen and (max-width:992px) {
 	.categories .col {
-		flex: 1 1 calc(50% - 15px);
+		flex: 1 1 calc(50% - 15px)
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width:600px) {
 	.categories .col {
-		flex: 1 1 100%;
+		flex: 1 1 100%
 	}
 }
 
-/* Text container */
 .categories .col .text-container {
 	position: relative;
 	z-index: 3;
 	color: #fff;
 	padding: 15px;
-	transition: all 0.3s ease;
+	transition: all 0.3s ease
 }
 
-/* Main title */
 .categories .col h5 {
 	margin: 0;
 	font-size: 1.5rem;
-	transition: transform 0.3s ease, opacity 0.3s ease;
+	transition: transform 0.3s ease, opacity 0.3s ease
 }
 
-/* Shop Now text hidden initially */
 .categories .col .shop-now {
 	opacity: 0;
 	font-size: 16px;
@@ -416,85 +394,73 @@ body {
 	justify-content: start;
 	align-items: center;
 	gap: 5px;
-	transition: all 0.3s ease;
+	transition: all 0.3s ease
 }
 
-/* Hover effects */
 .categories .col:hover img {
-	transform: scale(1.1);
+	transform: scale(1.1)
 }
 
 .categories .col:hover h5 {
-	transform: translateY(-20px);
+	transform: translateY(-20px)
 }
 
 .categories .col:hover .shop-now {
 	opacity: 1;
-	transform: translateY(0);
+	transform: translateY(0)
 }
 
 .categories .col .shop-now i {
-	transition: transform 0.3s ease;
+	transition: transform 0.3s ease
 }
 
 .categories .col:hover .shop-now i {
-	transform: translateX(5px);
+	transform: translateX(5px)
 }
 
-/* Feature section */
-/* Feature section */
 #feature {
 	display: flex;
 	justify-content: space-between;
 	padding: 40px 8%;
 	gap: 20px;
-	/* space between each box */
 	flex-wrap: wrap;
-	margin-bottom: 2rem;
+	margin-bottom: 2rem
 }
 
-/* Individual feature box */
 .fe-box {
 	display: flex;
 	align-items: center;
 	background: #fff;
-	/* optional light background */
 	padding: 20px 25px;
 	border-radius: 6px;
 	flex: 1 1 220px;
-	/* responsive width */
 	min-width: 200px;
 	position: relative;
 	gap: 15px;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-	/* subtle shadow */
+	box-shadow: 0 2px 6px rgb(0 0 0 / .05)
 }
 
-/* Image inside feature box */
 .fe-box img {
 	width: 50px;
 	height: 50px;
 	object-fit: contain;
-	flex-shrink: 0;
+	flex-shrink: 0
 }
 
-/* Text container */
 .fe-box h6 {
 	margin: 0;
 	font-size: 20px;
 	font-weight: 600;
-	color: #333;
+	color: #333
 }
 
-/* Small description under heading */
 .fe-box p {
 	margin: 4px 0 0 0;
 	font-size: 14px;
 	color: #777;
-	line-height: 1.4;
+	line-height: 1.4
 }
 
-/* Separator line */
 .fe-box:not(:last-child)::after {
 	content: '';
 	position: absolute;
@@ -502,30 +468,30 @@ body {
 	top: 10%;
 	width: 1px;
 	height: 80%;
-	background: rgba(0, 0, 0, 0.2);
-	/* subtle separator */
+	background: rgb(0 0 0 / .2)
 }
 
-.section-p1{
-	padding: 4rem 8rem;
+.section-p1 {
+	padding: 4rem 8rem
 }
-.pro .hover-actions button{
+
+.pro .hover-actions button {
 	width: 100%;
-	text-align: left;
+	text-align: left
 }
 
 .pro .hover-actions button:hover {
-	color: #333;
+	color: #333
 }
 
 .pro .hover-actions .quick-view {
-	background: transparent;
+	background: #fff0;
 	color: #333;
-	border: 1px solid #ccc;
+	border: 1px solid #ccc
 }
 
 .pro .hover-actions .quick-view:hover {
-	background: #f3f3f3;
+	background: #f3f3f3
 }
 
 .pro {
@@ -534,37 +500,35 @@ body {
 	overflow: hidden;
 	transition: all 0.3s ease;
 	cursor: pointer;
-	max-width: 300px;
+	max-width: 300px
 }
 
-
-/* ---------- QUICK VIEW BUTTON ---------- */
 .quick-view {
 	position: absolute;
 	bottom: -1px;
 	left: 0;
 	width: 100%;
-	padding: 0.8rem 0;
-	background: rgba(83, 83, 83, 0.9);
+	padding: .8rem 0;
+	background: rgb(83 83 83 / .9);
 	color: #fff;
 	text-align: center;
-	font-size: 0.9rem;
+	font-size: .9rem;
 	font-weight: 500;
 	border: none;
 	cursor: pointer;
 	transition: all 0.35s ease;
 	z-index: 2;
-	opacity: 0;
+	opacity: 0
 }
 
 .pro:hover .quick-view {
 	bottom: 0;
-	opacity: 1;
+	opacity: 1
 }
 
 .quick-view:hover {
-	background: rgba(60, 60, 60, 0.9);
-	color: #999;
+	background: rgb(60 60 60 / .9);
+	color: #999
 }
 
 .des {
@@ -572,41 +536,40 @@ body {
 	padding: 1rem;
 	transition: all 0.3s ease;
 	font-size: 1rem;
-	font-weight: 600;
+	font-weight: 600
 }
-
 
 .des h4 {
 	position: relative;
 	z-index: 1;
 	color: #777;
 	transition: all 0.3s ease;
-	margin-top: 0.25rem;
+	margin-top: .25rem
 }
 
 .hover-actions {
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 0.5rem;
+	bottom: .5rem;
 	display: flex;
 	align-items: center;
 	transform: translateY(50%);
 	opacity: 0;
-	transition: all 0.35s ease;
+	transition: all 0.35s ease
 }
 
 .pro:hover .hover-actions {
 	transform: translateY(0);
-	opacity: 1;
+	opacity: 1
 }
 
 .pro:hover .des h4 {
-	opacity: 0;
+	opacity: 0
 }
 
 .hover-actions button.select-options {
-	padding: 0.5rem 1.2rem;
+	padding: .5rem 1.2rem;
 	border-radius: 6px;
 	border: none;
 	color: #777;
@@ -614,11 +577,11 @@ body {
 	font-weight: 400;
 	cursor: pointer;
 	transition: all 0.3s ease;
-	background: none;
+	background: none
 }
 
 .hover-actions button.select-options:hover {
-	color: #333;
+	color: #333
 }
 
 .pro .wishlist-btn {
@@ -628,24 +591,347 @@ body {
 	width: 38px;
 	height: 38px;
 	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.9);
+	background: rgb(255 255 255 / .9);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: all 0.3s ease;
+	transition: all 0.3s ease
 }
 
 .pro .wishlist-btn:hover {
-	color: #373636;
+	color: #373636
 }
 
 .pro .wishlist-btn i {
 	font-size: 18px;
 	color: #333;
-	transition: all 0.3s ease;
+	transition: all 0.3s ease
 }
 
 .pro .wishlist-btn:hover i {
-	color: #373636;
+	color: #373636
 }
 
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	inset: 0;
+	background-color: rgb(0 0 0 / .7);
+	justify-content: center;
+	align-items: center;
+	padding: 20px
+}
+
+.modal-content {
+	background: #fff;
+	width: 80%;
+	max-width: 950px;
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 5px 25px rgb(0 0 0 / .3);
+	animation: slideDown 0.25s ease
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(-15px);
+		opacity: 0
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1
+	}
+}
+
+.close-modal {
+	position: absolute;
+	top: 12px;
+	right: 20px;
+	font-size: 26px;
+	cursor: pointer;
+	color: #333;
+	transition: 0.2s
+}
+
+.close-modal:hover {
+	color: #f60
+}
+
+.modal-body {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%
+}
+
+.modal-left {
+	flex: 1;
+	min-width: 320px;
+	background: #fafafa;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid #eee
+}
+
+.modal-left img {
+	max-width: 90%;
+	height: auto;
+	border-radius: 10px
+}
+
+.modal-right {
+	flex: 1.2;
+	min-width: 350px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center
+}
+
+.modal-right h2 {
+	font-size: 26px;
+	margin-bottom: 8px
+}
+
+.modal-right h4 {
+	color: #f60;
+	font-size: 22px;
+	margin-bottom: 18px
+}
+
+.modal-right p {
+	color: #555;
+	margin-bottom: 20px;
+	line-height: 1.6
+}
+
+.action-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 15px
+}
+
+.action-row input[type="number"] {
+	width: 60px;
+	padding: 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 14px
+}
+
+.action-row button {
+	padding: 10px 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 14px;
+	transition: 0.25s
+}
+
+.buy-now-btn {
+	background: #222;
+	color: #fff
+}
+
+.buy-now-btn:hover {
+	background: #000
+}
+
+.action-row .wishlist-btn-modal {
+	background: #fff0;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+.wishlist-btn-modal:hover {
+	background: #f60;
+	color: #fff
+}
+
+.quick-info {
+	margin-top: 25px;
+	padding-top: 15px;
+	border-top: 1px solid #eee
+}
+
+.quick-info p {
+	font-size: 14px;
+	color: #666;
+	margin: 5px 0
+}
+
+.quick-info span {
+	color: #333;
+	font-weight: 500
+}
+
+@media (max-width:768px) {
+	.modal-content {
+		flex-direction: column
+	}
+
+	.modal-left {
+		border-right: none;
+		border-bottom: 1px solid #eee
+	}
+
+	.modal-right {
+		padding: 20px
+	}
+}
+
+.pro-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px
+}
+
+.pro .flex.flex-col.relative {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	background: #f9f9f9
+}
+
+.pro .flex.flex-col.relative img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease
+}
+
+@media screen and (max-width:992px) {
+	.pro-container {
+		grid-template-columns: repeat(2, 1fr)
+	}
+}
+
+@media screen and (max-width:600px) {
+	.pro-container {
+		grid-template-columns: 1fr
+	}
+}
+
+.pro .flex.flex-col.relative::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff0;
+	transition: background 0.3s ease;
+	z-index: 1
+}
+
+.pro:hover .flex.flex-col.relative::after {
+	background: rgb(0 0 0 / .25)
+}
+
+.pro .quick-view,
+.pro .wishlist-btn {
+	z-index: 2;
+	position: absolute
+}
+
+.pro-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px
+}
+
+.pro {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden
+}
+
+.image-wrapper {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	background: #f0f0f0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden
+}
+
+.image-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover
+}
+
+@media screen and (max-width:992px) {
+	.pro-container {
+		grid-template-columns: repeat(2, 1fr)
+	}
+}
+
+@media screen and (max-width:600px) {
+	.pro-container {
+		grid-template-columns: 1fr
+	}
+}
+
+.pro-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px
+}
+
+.pro {
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	min-height: 100%;
+	flex: 1 1 23%;
+}
+
+.image-wrapper {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	background: #f0f0f0;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+.image-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover
+}
+
+@media (max-width:1200px) {
+	.pro-container {
+		grid-template-columns: repeat(3, 1fr)
+	}
+}
+
+@media (max-width:900px) {
+	.pro-container {
+		grid-template-columns: repeat(2, 1fr)
+	}
+}
+
+@media (max-width:600px) {
+	.pro-container {
+		grid-template-columns: 1fr
+	}
+}

@@ -16,7 +16,7 @@
 <body>
 
   <section id="header">
-    <a href="#"><img src="assets/hercules logo.png" class="logo" alt="LOGO"></a>
+    <a href="#"><img src="assets/images/Miscellaneous/logo.png" class="logo" alt="LOGO"></a>
     <div>
       <ul id="navbar">
         <li><a href="index.html" class="active">Home</a></li>
@@ -154,10 +154,10 @@
     </div>
 
     <div class="pro-container flex gap-4 flex-wrap">
-      <div class="pro">
-        <div class="flex flex-col relative">
+      <div class="pro" data-id="0">
+        <div class="flex flex-col relative iamge-wrapper">
           <img src="assets/TMA60.png" alt="">
-          <button class="quick-view" onclick="openQuickView(0)">Quick View</button>
+          <button class="quick-view">Quick View</button>
         </div>
 
         <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
@@ -243,58 +243,8 @@
       <p>2025, GIA-Ecommerce Website</p>
     </div>
   </footer>
-  <script src="script.js"></script>
-  <script type="module" src="./assets/scripts/navbar-auth.js"></script>
-  <script>
-    const searchBtn = document.getElementById('search-btn-nav');
-    const searchModal = document.getElementById('search-modal');
-    const overlay = document.getElementById('overlay');
+  <script type="module" src="/assets/scripts/main.js"></script>
 
-    searchBtn.addEventListener('click', () => {
-      searchModal.style.top = '0';
-      overlay.style.display = 'block';
-    });
-
-    overlay.addEventListener('click', () => {
-      searchModal.style.top = '-50%';
-      overlay.style.display = 'none';
-    });
-
-    // Handle Quick View modal
-    const modal = document.getElementById("quickViewModal");
-    const modalBody = document.getElementById("modal-body");
-    const closeModal = document.querySelector(".close-modal");
-
-    document.querySelectorAll(".quick-view").forEach(btn => {
-      btn.addEventListener("click", e => {
-        e.stopPropagation();
-        const product = btn.closest(".pro");
-        const id = product.dataset.id;
-        modalBody.innerHTML = `
-      <h3>${product.querySelector("h5").innerText}</h3>
-      <img src="${product.querySelector("img").src}" style="width:100%;height:250px;object-fit:contain;">
-      <p>${product.querySelector("span").innerText}</p>
-      <h4>${product.querySelector("h4").innerText}</h4>
-    `;
-        modal.style.display = "flex";
-      });
-    });
-
-    closeModal.onclick = () => (modal.style.display = "none");
-    window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
-
-    // Redirect when "Select Options" clicked
-    document.querySelectorAll(".select-btn").forEach(btn => {
-      btn.addEventListener("click", e => {
-        e.stopPropagation();
-        const product = btn.closest(".pro");
-        const id = product.dataset.id;
-        window.location.href = `sproduct.html?id=${id}`;
-      });
-    });
-
-
-  </script>
 </body>
 
 </html>
