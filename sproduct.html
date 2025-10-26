@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Details | Hercules Fitness</title>
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="./style.css">
   <script src="https://kit.fontawesome.com/add5bfa3f7.js" crossorigin="anonymous"></script>
 </head>
 
@@ -15,10 +15,20 @@
     <div>
       <ul id="navbar">
         <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html" class="active">Shop</a></li>
+        <li class="has-dropdown">
+          <a href="shop.html" class="active">Shop</a>
+          <ul class="dropdown">
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html?cat=equipment">Equipments</a></li>
+            <li><a href="shop.html?cat=supplements">Supplements</a></li>
+            <li><a href="shop.html?cat=apparel">Apparel</a></li>
+            <li><a href="shop.html?cat=accessories">Accessories</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact</a></li>
-        <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+  <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+  <li id="lg-login"><a href="login.html" id="login-link"><i class="fa-solid fa-user"></i> Login</a></li>
+  <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
       </ul>
     </div>
     <div id="mobile">
@@ -95,27 +105,35 @@
     </div>
   </footer>
 
-  <script src="Script.js"></script>
+  <script src="script.js"></script>
 
   <script>
     // ---------- PRODUCT DATA ----------
     const products = [
-      { id: 0, name: "TMA60", image: "assets/TMA60.png", price: 169000, description: "High-performance treadmill built for endurance and durability." },
-      { id: 1, name: "ELP70", image: "assets/elp70.png", price: 370000, description: "Smooth and quiet elliptical trainer with adjustable resistance." },
-      { id: 2, name: "RBP70", image: "assets/rbp70.png", price: 290000, description: "Ergonomic recumbent bike designed for comfort and cardio training." },
-      { id: 3, name: "Flexion Lat Pull Down & Mid Row", image: "assets/Flexion-Lat-Pull-Down-Mid-Row.png", price: 275000, description: "Dual-purpose machine for comprehensive back and shoulder workouts." },
-      { id: 4, name: "Armour Shoulder Press", image: "assets/AR03.png", price: 300000, description: "Plate-loaded shoulder press for serious strength building." },
-      { id: 5, name: "Eclipse Smith & Functional Trainer", image: "assets/ECLIPSE.png", price: 150000, description: "All-in-one Smith and functional trainer for full-body workouts." },
-      { id: 6, name: "Fusion 45° Incline Squat", image: "assets/FUSION.png", price: 200000, description: "Precision incline squat machine with solid construction." },
-      { id: 7, name: "Wave Incline Bench", image: "assets/WAVE.png", price: 120000, description: "Durable adjustable incline bench for versatile training." },
-      { id: 8, name: "UBS90 Upright Bike", image: "assets/ubs90.png", price: 756000, description: "Professional upright bike offering comfort and digital tracking." },
-      { id: 9, name: "DIO5 Leg Extension", image: "assets/LEGEXTENSION.png", price: 316655, description: "Leg extension machine designed for lower body strength development." },
-      { id: 10, name: "DI16 Hip Abduction & Adduction", image: "assets/HIP ABDUCTION.png", price: 2999, description: "Dual-function machine for hip abduction and adduction exercises." },
-      { id: 11, name: "BC06 Biceps Curl", image: "assets/BICEPS CURL.png", price: 159640, description: "Ergonomic bicep curl machine with adjustable seat height." },
-      { id: 12, name: "DB06 Dumbbells", image: "assets/DUMBBELL.png", price: 20860, description: "Durable dumbbells for free weight training." },
-      { id: 13, name: "PL06 Weight Plates", image: "assets/PLATES.png", price: 35000, description: "Rubber-coated weight plates for safe and quiet workouts." },
-      { id: 14, name: "BR06 Curl Barbell", image: "assets/BAR.png", price: 3020, description: "Chrome curl barbell for arm training and grip comfort." },
-      { id: 15, name: "BL06 Medicine Ball", image: "assets/BALL.png", price: 4000, description: "High-bounce medicine ball for strength and stability exercises." }
+      { id: 0, name: "TMA60", image: "assets/images/Products/Equipments/TMA60.png", price: 169000, description: "High-performance treadmill built for endurance and durability." },
+      { id: 1, name: "ELP70", image: "assets/images/Products/Equipments/elp70.png", price: 370000, description: "Smooth and quiet elliptical trainer with adjustable resistance." },
+      { id: 2, name: "RBP70", image: "assets/images/Products/Equipments/rbp70.png", price: 290000, description: "Ergonomic recumbent bike designed for comfort and cardio training." },
+      { id: 3, name: "Flexion Lat Pull Down & Mid Row", image: "assets/images/Products/Equipments/Flexion-Lat-Pull-Down-Mid-Row.png", price: 275000, description: "Dual-purpose machine for comprehensive back and shoulder workouts." },
+      { id: 4, name: "Armour Shoulder Press", image: "assets/images/Products/Equipments/AR03.png", price: 300000, description: "Plate-loaded shoulder press for serious strength building." },
+      { id: 5, name: "Eclipse Smith & Functional Trainer", image: "assets/images/Products/Equipments/ECLIPSE.png", price: 150000, description: "All-in-one Smith and functional trainer for full-body workouts." },
+      { id: 6, name: "Fusion 45° Incline Squat", image: "assets/images/Products/Equipments/FUSION.png", price: 200000, description: "Precision incline squat machine with solid construction." },
+      { id: 7, name: "Wave Incline Bench", image: "assets/images/Products/Equipments/WAVE.png", price: 120000, description: "Durable adjustable incline bench for versatile training." },
+      { id: 8, name: "UBS90 Upright Bike", image: "assets/images/Products/Equipments/ubs90.png", price: 756000, description: "Professional upright bike offering comfort and digital tracking." },
+      { id: 9, name: "DIO5 Leg Extension", image: "assets/images/Products/Equipments/LEGEXTENSION.png", price: 316655, description: "Leg extension machine designed for lower body strength development." },
+      { id: 10, name: "DI16 Hip Abduction & Adduction", image: "assets/images/Products/Equipments/HIP ABDUCTION.png", price: 2999, description: "Dual-function machine for hip abduction and adduction exercises." },
+      { id: 11, name: "BC06 Biceps Curl", image: "assets/images/Products/Equipments/BICEPS CURL.png", price: 159640, description: "Ergonomic bicep curl machine with adjustable seat height." },
+      { id: 12, name: "DB06 Dumbbells", image: "assets/images/Products/Equipments/DUMBBELL.png", price: 20860, description: "Durable dumbbells for free weight training." },
+      { id: 13, name: "PL06 Weight Plates", image: "assets/images/Products/Equipments/PLATES.png", price: 35000, description: "Rubber-coated weight plates for safe and quiet workouts." },
+      { id: 14, name: "BR06 Curl Barbell", image: "assets/images/Products/Equipments/BAR.png", price: 3020, description: "Chrome curl barbell for arm training and grip comfort." },
+      { id: 15, name: "BL06 Medicine Ball", image: "assets/images/Products/Equipments/BALL.png", price: 4000, description: "High-bounce medicine ball for strength and stability exercises." },
+      { id: 16, name: "Protein Blend", image: "assets/images/Products/Supplements/ProteinBleand.jpeg", price: 2500, description: "Whey Protein Blend - 2kg | 5.5g BCAA, Chocolate Flavour | Supports Muscle Growth and Recovery." },
+      { id: 17, name: "Pre-Workout", image: "assets/images/Products/Supplements/pre-workout.jpeg", price: 1800, description: "High-energy pre-workout mix for performance boost." },
+      { id: 18, name: "Multivitamin", image: "assets/images/Products/Supplements/multivitamin.jpeg", price: 1200, description: "Daily multivitamin to support overall health." },
+      { id: 19, name: "Performance Tee", image: "assets/images/Products/Apparel/Performancetee3.png", price: 799, description: "Lightweight performance tee for training." },
+      { id: 20, name: "Training Shorts", image: "assets/images/Products/Apparel/shorts.png", price: 999, description: "Comfortable training shorts with quick-dry fabric." },
+      { id: 21, name: "Hoodie", image: "assets/images/Products/Apparel/hoodie.png", price: 1599, description: "Warm hoodie for warmups and cool-downs." },
+      { id: 22, name: "Gym Gloves", image: "assets/images/Products/Accessories/gymgloves.jpeg", price: 499, description: "Protective gym gloves for better grip." },
+      { id: 23, name: "Water Bottle", image: "assets/images/Products/Accessories/waterbottle.png", price: 299, description: "Durable water bottle for workouts." },
     ];
 
     // ---------- GET PRODUCT ID FROM URL ----------
