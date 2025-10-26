@@ -74,7 +74,7 @@ export async function loadUserCart() {
 						id: docSnap.id,
 						title: docSnap.data().title,
 						price: docSnap.data().price,
-						img: docSnap.data().images[0] || "/assets/default-product.png",
+						img: docSnap.data().image || docSnap.data().images?.[0] || "/assets/default-product.png",
 						category: docSnap.data().category || "Fitness",
 					});
 				});
