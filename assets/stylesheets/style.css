@@ -66,10 +66,10 @@ body {
 	transition: 0.2s ease
 }
 
-#navbar li a:hover,
+/* #navbar li a:hover,
 #navbar li a.active {
 	text-decoration: underline
-}
+} */
 
 #search-li {
 	display: flex;
