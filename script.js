@@ -293,12 +293,17 @@ function filterProducts(query) {
   const products = document.querySelectorAll('.pro');
   if (!products) return;
   let any = false;
+  const catFilter = (window.currentCategory || 'all').toLowerCase();
   products.forEach(pro => {
     const title = (pro.querySelector('.des h5') ? pro.querySelector('.des h5').textContent : '') || '';
     const cat = (pro.querySelector('.des span') ? pro.querySelector('.des span').textContent : '') || '';
     const price = (pro.querySelector('.des h4') ? pro.querySelector('.des h4').textContent : '') || '';
     const combined = (title + ' ' + cat + ' ' + price).toLowerCase();
-    if (!q || combined.indexOf(q) !== -1) {
+    // category match
+    const prodCat = (pro.dataset.category || '').toLowerCase() || 'equipment';
+    const catMatch = (catFilter === 'all') || (prodCat === catFilter);
+    const textMatch = (!q || combined.indexOf(q) !== -1);
+    if (catMatch && textMatch) {
       pro.style.display = '';
       any = true;
     } else {
@@ -338,5 +343,52 @@ document.addEventListener('DOMContentLoaded', () => {
       if (searchInput) searchInput.value = q;
       filterProducts(q);
     }
+    // if no q but category present, still apply filters
+    const cat = getQueryParam('cat');
+    if (cat) {
+      filterByCategory(cat);
+    } else if (!q) filterProducts('');
   }
+
+
+// Set current category and update UI tabs
+function filterByCategory(cat) {
+  window.currentCategory = (cat || 'all').toLowerCase();
+  // update active class on buttons
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    if (btn.dataset.cat && btn.dataset.cat.toLowerCase() === window.currentCategory) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+  // apply current search filter as well
+  const searchInput = document.getElementById('search-bar');
+  const q = searchInput ? String(searchInput.value || '').trim() : '';
+  filterProducts(q);
+}
+  // Login link behavior: if a lightweight isLoggedIn flag is present in localStorage, show Logout
+  const loginLink = document.getElementById('login-link');
+  function isLoggedIn() {
+    return localStorage.getItem('isLoggedIn') === '1';
+  }
+  function setLoggedIn(val) {
+    if (val) localStorage.setItem('isLoggedIn', '1');
+    else localStorage.removeItem('isLoggedIn');
+  }
+  function updateLoginUI() {
+    if (!loginLink) return;
+    if (isLoggedIn()) {
+      loginLink.innerHTML = '<i class="fa-solid fa-user"></i> Logout';
+      loginLink.setAttribute('href', '#');
+      loginLink.onclick = (e) => {
+        e.preventDefault();
+        setLoggedIn(false);
+        // optionally clear other session info
+        location.reload();
+      };
+    } else {
+      loginLink.innerHTML = '<i class="fa-solid fa-user"></i> Login';
+      loginLink.setAttribute('href', 'login.html');
+      loginLink.onclick = null;
+    }
+  }
+  updateLoginUI();
 });
