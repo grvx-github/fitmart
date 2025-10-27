@@ -641,7 +641,7 @@ footer .follow i:hover{
 } */
 
 #Page-header{
-    background-image: url(assets/hope.jpg);
+    background-image: url(assets/images/Background/hope.jpg);
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -863,7 +863,7 @@ footer .follow i:hover{
     z-index: -9;
 }
 #Page-header.about-header{
-    background-image: url("assets/bluishgrey.jpg");
+    background-image: url("assets/images/Background/bluishgrey.jpg");
 }
 #about-head img{
 width: 50%;
